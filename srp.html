@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>好用起始页</title>
+    <link rel="shortcut icon" href="https://i.postimg.cc/pdpW4gSg/8ad00db9-E370743-663e7b5a.png">
+    <!--<script src="https://use.fontawesome.com/f6ea791bbc.js"></script>-->
+    <style>
+        body {
+            min-width: 1080px;
+            padding: 0;
+            margin: 0;
+            background-color: black;
+
+        }
+
+        A {
+            text-decoration: none
+        }
+
+        .bg {
+            position: fixed;
+            background: url(https://retiehe.com/backend/bing/1080p) no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            filter: blur(1px);
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            transform: scale(1.000);
+            filter: brightness(100%);
+            -webkit-transition: all 500ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            -moz-transition: all 500ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            -o-transition: all 500ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            transition: all 500ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+        }
+
+        body:hover .bg {
+            filter: blur(6px);
+            transform: scale(1.18);
+        }
+
+        .bd {
+            margin: auto;
+            width: 1080px;
+        }
+
+        .cs {
+            height: 700px;
+            margin: auto;
+            width: 1000px;
+        }
+
+        .time {
+            color: white;
+            font-family: "Bahnschrift", 'Segoe UI';
+            font-size: 48px;
+            text-align: center;
+            font-weight: 100;
+            padding: 200px 0 0 0;
+			pointer-events: none;
+        }
+
+        .search-box {
+            margin: auto;
+            width: fit-content;
+            height: fit-content;
+        }
+
+        #search {
+            font-family: "Bahnschrift", 'Segoe UI';
+            position: relative;
+            transform: translate(-50%, 0px);
+            left: 50%;
+            height: 42px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.70);
+            border: none;
+            border-radius: 40px;
+            outline: none;
+            margin: 30px 0 0 0;
+            width: 240px;
+            backdrop-filter: blur(8px);
+            -webkit-transition: all 500ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            -moz-transition: all 500ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            -o-transition: all 500ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            transition: all 500ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            font-size: 14px;
+        }
+
+        #search:hover {
+            width: 480px;
+            background: rgba(255, 255, 255, 0.78);
+        }
+
+        #search:focus {
+            width: 480px;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        #search:focus+.srselc {
+            opacity: 100%;
+            pointer-events: auto;
+            margin: 18px 0px;
+            top: 8px;
+			transform: translate(-50%, 0px) scale(1.0);
+        }
+
+        .srselc:hover {
+            opacity: 100%;
+            pointer-events: auto;
+            margin: 18px 0px;
+            top: 8px;
+			background: rgba(255, 255, 255, 0.680);
+        }
+
+        .srselc {
+            opacity: 0%;
+            pointer-events: none;
+            position: relative;
+            transform: translate(-50%, 0px);
+            left: 50%;
+            top: -4px;
+            display: block;
+            background: rgba(255, 255, 255, 0.50);
+            width: fit-content;
+            height: 28px;
+            min-width: 28px;
+            backdrop-filter: blur(8px);
+            border-radius: 17px;
+            margin: 0px 0px;
+            padding: 4px;
+            -webkit-transition: all 200ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            -moz-transition: all 200ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            -o-transition: all 200ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            transition: all 200ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+        }
+
+        .srselcbox {
+            position: none;
+            display: inline-block;
+            border-radius: 13px;
+            height: 28px;
+            width: 40px;
+            background: rgba(255, 255, 255, 0.80);
+            margin-left: 2px;
+			-webkit-transition: all 380ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            -moz-transition: all 380ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            -o-transition: all 380ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            transition: all 380ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+        }
+		.srselcbox:active{
+			transform: scale(0.9);
+		}
+
+        .srselcimg {
+            width: 24px;
+            height: 24px;
+            margin: 2px 8px;
+        }
+
+        #hitokoto {
+            font-family: "Bahnschrift", 'Segoe UI';
+            font-weight: 900;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0);
+            padding: 30px 0px 30px 0px;
+            min-width: 200px;
+            width: fit-content;
+            z-index: 100;
+            margin: 180px auto 0px auto;
+            -webkit-transition: all 500ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            -moz-transition: all 500ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            -o-transition: all 500ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            transition: all 500ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            border-radius: 18px;
+        }
+
+        #hitokoto:hover {
+            background-color: rgba(255, 255, 255, 0.88);
+        }
+
+        #hitokoto_name {
+            color: #dddddd;
+            display: block;
+            opacity: 0;
+            font-size: 16px;
+            text-align: end;
+            -webkit-transition: all 500ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            -moz-transition: all 500ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            -o-transition: all 500ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            transition: all 500ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            margin: 28px 0px 0px 0px;
+        }
+
+
+        #hitokoto:hover #hitokoto_name {
+            padding-right: 20px;
+            color: #747474;
+            opacity: 1;
+            font-size: 16px;
+            text-shadow: 0px 2px 6px rgb(0 0 0 / 0%), 0px 1px 2px rgb(0 0 0 / 0%);
+        }
+
+        #hitokoto_name:before {
+            content: '——';
+            color: #dddddd;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        #hitokoto:hover #hitokoto_name:before {
+            opacity: 1;
+            color: #747474;
+            right: 0;
+        }
+
+        .hitokoto {
+            color: rgba(255, 255, 255, 0.32);
+            display: block;
+            font-size: 16px;
+            -webkit-transition: all 500ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            -moz-transition: all 500ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            -o-transition: all 500ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            transition: all 500ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
+            margin: 0px 0px 0px 0px;
+            height: 0;
+            font-family: "Bahnschrift", 'Segoe UI';
+        }
+
+        #hitokoto:hover #hitokoto_text {
+            color: #747474;
+            text-shadow: 0px 2px 6px rgb(0 0 0 / 0%), 0px 1px 2px rgb(0 0 0 / 0%);
+        }
+
+        #hitokoto:hover .hitokoto {
+            color: rgba(0, 0, 0, 0.25);
+            font-size: 16px;
+            text-shadow: 0px 2px 6px rgb(0 0 0 / 0%), 0px 1px 2px rgb(0 0 0 / 0%);
+        }
+
+        #hitokoto_text {
+            color: #dddddd;
+            width: fit-content;
+            height: 18px;
+            text-shadow: 0px 2px 6px rgb(0 0 0 / 18%), 0px 1px 2px rgb(0 0 0 / 30%);
+            margin: 00px 80px 0px 80px;
+        }
+
+        #hitokoto_text:after {
+            color: #969696;
+            font-weight: 900;
+            content: "\00a0』"
+        }
+
+        #hitokoto_text:before {
+            color: #969696;
+            font-weight: 900;
+            content: "『\00a0"
+        }
+
+        .toolboxbox {
+            display: block;
+            text-align: center;
+        }
+
+
+        .tbtps {
+            font-family: "Bahnschrift", 'Segoe UI';
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.20);
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0px 0px 7px 0px;
+            padding: 3px 0px 3px 0px;
+        }
+
+
+        #frame-standard {
+            position: fixed;
+            margin: 24px 0px 0px 16px;
+            background-color: rgba(231, 238, 252, 0.84);
+            border-radius: 17px;
+            backdrop-filter: blur(8px);
+        }
+
+        .tips {
+            position: fixed;
+            opacity: 0%;
+            pointer-events: none;
+            background: #ffffff;
+            z-index: 99999;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            font-size: 48px;
+        }
+
+		.tipss {
+            font-family: "Bahnschrift", 'Segoe UI';
+            position: fixed;
+			top: 100%;
+			height: fit-content;
+			width: fit-content;
+			left: 50%;
+            color: rgba(255, 255, 255, 0.3);
+			transform: translate(-50%, -120%);
+			font-size: 6px;
+        }
+    </style>
+</head>
+
+<body onload="startTime()">
+    <div class="tips">您的浏览器内核过老!无法正常浏览！！！<br/>请更换/更新浏览器,使用最新 Edge/Chrome/百分浏览器 获得网页完整体验<br/>若您继续使用，您将遇到下列问题：<br/>模糊效果失效<br/>透明效果失效<br/>模块显示出现问题<br/>未知的兼容问题<br/>漏洞攻击<br/>我们网页不植入任何木马，仅使用此老版本css能显示的代码的东西提示您。不利用任何漏洞。</div>
+    <div class="bg"></div>
+    <iframe id="frame-standard" scrolling="no" height="200" width="260" seamless="seamless" frameborder="0"
+        allowtransparency="true"
+        src="https://widget.qweather.net/standard/demo.html?layout=2&amp;width=240&amp;height=160&amp;background=5&amp;dataColor=000000&amp;modules=10&amp;key=7176405e1d2d435896ed85c3c5fe6dbe&amp;v=_1620139559851"></iframe>
+    <div class="fsb">.</div>
+    <div class="cs">
+        <div class="time" id="time"></div>
+        <div class="search-box">
+            <input value="" type="text" onkeydown="kydone(event);" id="search" placeholder="Click here to search ">
+            <div class="srselc">
+                <div class="srselcbox" onclick="asrc('bing');"><img class="srselcimg"
+                        src="https://pic.liesio.com/2021/05/22/e4b45991a41f9.png"></div>
+                <div class="srselcbox" onclick="asrc('quark');"><img class="srselcimg"
+                        src="https://pic.liesio.com/2021/05/22/808ccfc0a28d8.png"></div>
+                <div class="srselcbox" onclick="asrc('taobao');"><img class="srselcimg"
+                        src="https://pic.liesio.com/2021/05/22/45256cf030fdd.png"></div>
+				<div class="srselcbox" onclick="asrc('bilibili');"><img class="srselcimg"
+                        src="https://pic.liesio.com/2021/05/22/61aa9a2102281.png"></div>
+            </div>
+        </div>
+
+        <div id="hitokoto" alt=""><a href="https://hitokoto.cn/" id="hitokoto_text">稍等哦</a>
+            <a class="hitokoto">hitokoto API</a><a id="hitokoto_name"></a></div>
+    </div>
+	<div class="tbtps">临时推广: 默哀!5月20日 中国眼科医学界泰斗夏德昭逝世，享年104岁
+5月21日 故宫博物院原副院长、文博专家杨伯达逝世，享年94岁
+5月22日 中国肝胆外科之父吴孟超逝世，享年99岁
+5月22日 中国杂交水稻之父袁隆平逝世，享年91岁
+“中国肝脏外科之父”吴孟超逝世享年99岁</div>
+	<div class="tipss">此站仅用于学习,禁止盗版。必应，夸克，淘宝和一言api的内容均不负责，仅维护此网站。 建议请投稿至er_gouo@qq.com</div>
+    <!--js-->
+    <script>
+        fetch('https://v1.hitokoto.cn/?c=d&c=i&c=k')
+            .then(response => response.json())
+            .then(data => {
+                const hitokoto = document.getElementById('hitokoto_text')
+                const from = document.getElementById('hitokoto_name')
+                hitokoto.href = 'https://cn.bing.com/search?q=' + data.hitokoto
+                hitokoto.innerText = data.hitokoto
+                from.innerText = '《' + data.from + '》' + data.from_who
+            })
+            .catch(console.error)
+    </script>
+    <script LANGUAGE="JavaScript">
+        function startTime() {
+            var today = new Date()
+            var h = today.getHours()
+            var m = today.getMinutes()
+            var s = today.getSeconds()
+            // add a zero in front of numbers<10
+            m = checkTime(m)
+            s = checkTime(s)
+            document.getElementById('time').innerHTML = h + ":" + m
+            t = setTimeout('startTime()', 20)
+        }
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i
+            }
+            return i
+        }
+    </SCRIPT>
+    <script>
+        function kydone(e) {
+            var evt = window.event || e;
+            if (evt.keyCode == 13) {
+                //回车事件
+                var inps
+                var reg =
+                    /^([hH][tT]{2}[pP]:\/\/|[hH][tT]{2}[pP][sS]:\/\/)(([A-Za-z0-9-~]+)\.)+([A-Za-z0-9-~\/])+$/;
+                var inps = document.getElementById('search').value;
+                if (!reg.test(inps)) {
+                    window.open("https://cn.bing.com/search?q=" + inps);
+                } else {
+                    window.open(inps);
+                }
+            }
+        }
+        function asrc(b) {
+            var srv = b;
+            var inps = document.getElementById('search').value;
+            //开始判断
+            if (srv == 'bing') { //检测是不是必应
+                window.open("https://cn.bing.com/search?q=" + inps);
+            } else if (srv == 'quark') { //检测是不是夸克
+                window.open(
+                    "https://quark.sm.cn/s?uc_param_str=dnntnwvepffrgibijbprsvpidicheiutds&from=kkframenew&q=" +
+                    inps + "&by=tuijian&by2=text");
+            } else if (srv == 'taobao') { //检测是不是夸克
+                window.open("https://s.taobao.com/search?q=" + inps);
+            } else if (srv == 'bilibili') { //检测是不是bilibili
+                window.open("https://search.bilibili.com/all?keyword=" + inps);
+            }
+        }
+    </script>
+</body>
+
+</html>

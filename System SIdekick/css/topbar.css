@@ -1,0 +1,240 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+body::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 12px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 2px;
+    border-radius: 0x;
+    background: rgb(104, 104, 104);
+}
+body::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 0px;
+    background: rgba(255,255,255,0.45);
+}
+body::-webkit-scrollbar-track {/*滚动条里面轨道*/
+    border-radius: 0px;
+    background: rgb(104, 104, 104);
+}
+.topbar{
+    background-color: white;
+    height: 54px;
+    
+    min-width: 600px;
+}
+.topbarIndex{
+    padding: 0 60px;
+}
+.topbarTitle{
+    line-height: 54px;
+    font-family: 'Bahnschrift';
+    font-size: 24px;
+    pointer-events: none;
+    float: left;
+}
+.topbarTitle::after{
+    border-left: 3px solid #000;
+    height: 24px;
+    content: "";
+    margin: 0 24px;
+}
+
+.topbarBuLef{
+    margin: 10px 24px 0 0;
+    line-height: 34px;
+    font-size: 16px;
+    display: inline-block;
+}
+
+
+.topbarBuRi{
+    margin: 10px 24px 0 0;
+    line-height: 34px;
+    font-size: 16px;
+    display: inline-block;
+    float: right;
+}
+.hoverunderline:hover{
+    border-bottom: 2px solid #000;
+}
+
+.link{
+    border-bottom: 2px solid #000;
+    color: #000;
+}
+.link:hover{
+    border-bottom: 2px solid #fff;
+}
+
+.button{
+    background: rgba(97,158,209);
+    border: 0;
+    padding: 8px 20px 8px 20px;
+    font-size: 18px;
+    font-family: '黑体';
+    color: #fff;
+}
+
+.button:hover{
+    border: 2px solid #000;
+    padding: 6px 18px 6px 18px;
+}
+
+.button:active{
+    border: 2px solid #fff;
+    padding: 6px 18px 6px 18px;
+}
+
+#top{
+    height: 360px;
+    padding: 20px 60px;
+    background: rgb(0,96,192);
+    color: white;
+}
+
+#top h1{
+    font-size: 36px;
+    margin: 40px 0 0 0;
+}
+
+#top h2{
+    font-size: 48px;
+    margin: 0;
+}
+#top h3{
+    font-size: 24px;
+    margin: 30px 0 0 0;
+}
+
+#top .button{
+    margin: 60px 0 0 0;
+}
+
+
+#tell{
+    height: fit-content;
+    padding: 20px 60px;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    margin: 0 0 80px 0;
+}
+#tell h1{
+    font-size: 36px;
+    text-align: center;
+    letter-spacing:5px;
+}
+.box{
+    width: fit-content;
+    text-align: center;
+    margin: 0 auto 0px auto;
+}
+.box1{
+    background-color: rgb(230,230,233);
+    width: 250px;
+    height: 250px;
+    display: inline-block;
+    margin: 10px;
+}
+.box1 img{
+    width:80px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.box1 .img{
+    margin: 30px 0;
+}
+
+.box1 .boxner{
+    width: 150px;
+    margin: 0 auto;
+    height: 64px;
+}
+
+#download{
+    background: rgb(230,230,233);
+    height: fit-content;
+    padding: 20px 60px;
+    min-height: 360px;
+    padding: 20px 60px;
+}
+#download h1{
+    margin: 21px 0 40px 0;
+    
+}
+#download h2{
+    margin: 4px 0;
+    font-size: 16px;
+    font-family: 'Bahnschrift';
+    
+}
+#download .a::after{
+    border-left: 2px solid #000;
+    height: 20px;
+    content: "";
+    margin: 0 6px;
+}
+
+#download .button{
+    background-color: rgb(0,96,192);
+    margin: 60px 0 0 0;
+}
+.dHistory{
+    width: 300px;height: 300px;float: right;
+    background-color: white;
+    transform: translate(0px,20px);
+    border-radius: 13px;
+    padding: 10px;
+    overflow-y:auto;
+    
+}
+
+.box2{
+    background-color: rgb(240,240,240);
+    padding: 18px 10px;
+    border-radius: 10px;
+    margin: 0px 0 12px 0;
+}
+.box2:hover{
+    border: 2px solid #000;
+    padding: 16px 8px;
+}
+
+.dHistory::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 12px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 2px;
+    border-radius: 13px;
+    background: rgb(104, 104, 104);
+}
+.dHistory::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 13px;
+    background: rgba(255,255,255,0.45);
+}
+.dHistory::-webkit-scrollbar-track {/*滚动条里面轨道*/
+    border-radius: 13px;
+    background: rgb(104, 104, 104);
+}
+/*包含以下五种的链接*/
+a {
+    text-decoration: none;
+}
+/*正常的未被访问过的链接*/
+a:link {
+    text-decoration: none;
+}
+/*已经访问过的链接*/
+a:visited {
+    text-decoration: none;
+}
+/*鼠标划过(停留)的链接*/
+a:hover {
+    text-decoration: none;
+}
+/* 正在点击的链接，鼠标在元素上按下还没有松开*/
+a:active {
+    text-decoration: none;
+}
+/* 获得焦点的时候 鼠标松开时显示的颜色*/
+a:focus {
+    text-decoration: none;
+}

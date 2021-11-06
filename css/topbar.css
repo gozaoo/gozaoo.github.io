@@ -87,8 +87,8 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
     border-bottom: 2px solid #fff;
 }
 
-.buttom{
-    background: rgba(97,158,209);
+.button{
+    background: rgba(0,103,184);
     border: 0;
     padding: 8px 20px 8px 20px;
     font-size: 18px;
@@ -96,12 +96,12 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
     color: #fff;
 }
 
-.buttom:hover{
+.button:hover{
     border: 2px solid #000;
     padding: 6px 18px 6px 18px;
 }
 
-.buttom:active{
+.button:active{
     border: 2px solid #fff;
     padding: 6px 18px 6px 18px;
 }

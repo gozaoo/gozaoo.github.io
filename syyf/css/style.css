@@ -3,7 +3,7 @@
     height: 600px;
     background-image: url(../image/loginPic.jpg);
     background-position-x: center;
-	background-size: auto;
+	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
     color: white;
@@ -26,16 +26,46 @@
     font-size: 18px;
     width: 540px;
 }.home h4{
-    padding: 80px 0 0 0;
+    padding: 120px 0 0 0;
     display: none;
     margin: 0;
     font-size: 16px;
     margin: 0 auto;
 }
+.ysj{
+    height: 600px;
+    color: black;
+    padding: 0 40px;
+    width: fit-content;
+    margin: 0 auto
+}
+.blockImagelef{
+    float: left;
+    height: 300px;
+    width: 300px;
+    background-color: rgb(0, 180, 0);
+    background-image: url(../image/grass_block_side.png);
+	background-size: cover;
+    border-radius: 23px;
+    margin: 150px 80px;
+}.blockTextRi{
+    float: left;
+    height: 360px;
+    width: 360px;
+    margin: 120px 30px 120px 30px;
+    color: #000;
+    text-align: left;
+}
+.blockTextRi h1{
+    font-size: 48px;
+    padding: 0 0 0 0;
+}
+.blockTextRi button{
+    margin-top: 10px;
+}
 @media (max-width: 1000px) {
     .home{
         height: 600px;
-        background-image: url(../image/loginPic.png);
         background-position-x: center;
         background-size: auto;
         background-repeat: no-repeat;
@@ -60,12 +90,41 @@
         font-size: 18px;
         margin: 0 auto;
     }
-    
+    .ysj{
+        height: 600px;
+        color: black;
+        padding: 0 40px;
+        width: fit-content;
+        margin: 0 auto
+    }
+    .blockImagelef{
+        float: none;
+        height: 100px;
+        width: 100px;
+        background-color: rgb(0, 180, 0);
+        background-image: url(../image/grass_block_side.png);
+        background-size: cover;
+        border-radius: 23px;
+        margin: 90px auto 40px auto;
+    }.blockTextRi{
+        float: none;
+        height: 360px;
+        width: 360px;
+        margin: 00px 30px 120px 30px;
+        color: #000;
+        text-align: center;
+    }
+    .blockTextRi h1{
+        font-size: 48px;
+        padding: 0 0 0 0;
+    }
+    .blockTextRi button{
+        margin-top: 10px;
+    }
 }
 @media (max-width: 635px) {
     .home{
         height: 600px;
-        background-image: url(../image/loginPic.png);
         background-position-x: center;
         background-size: auto;
         background-repeat: no-repeat;

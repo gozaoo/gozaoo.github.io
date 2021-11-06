@@ -1,70 +1,90 @@
 
-.home{
+.imageBack {
     height: 600px;
-    background-image: url(../image/loginPic.jpg);
     background-position-x: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: white;
     padding: 0 40px;
 }
 
-.home h1{
+#home h1 {
     padding: 80px 0 0 0;
     margin: 0;
     font-size: 64px;
 }
-.home h2{
+
+#home h2 {
     padding: 00px 0 0 30px;
     margin: 0;
     font-size: 35px;
 }
-.home h3{
+
+#home h3 {
     padding: 80px 0 0 30px;
     margin: 0;
     font-size: 18px;
     width: 540px;
-}.home h4{
+}
+
+#home h4 {
     padding: 120px 0 0 0;
     display: none;
     margin: 0;
     font-size: 16px;
     margin: 0 auto;
 }
-.ysj{
-    height: 600px;
+
+.ysj {
+    height: 860px;
     color: black;
-    padding: 0 40px;
+    padding: 30px 40px 0 40px;
     width: fit-content;
     margin: 0 auto
 }
-.blockImagelef{
+
+.blockImagelef {
     float: left;
     height: 300px;
     width: 300px;
     background-color: rgb(0, 180, 0);
     background-image: url(../image/grass_block_side.png);
-	background-size: cover;
+    background-size: cover;
     border-radius: 23px;
-    margin: 150px 80px;
-}.blockTextRi{
+    margin: 60px 80px;
+}
+
+.blockTextRi {
     float: left;
     height: 360px;
     width: 360px;
-    margin: 120px 30px 120px 30px;
+    margin: 30px 30px;
     color: #000;
     text-align: left;
 }
-.blockTextRi h1{
+
+.blockTextRi h1 {
     font-size: 48px;
     padding: 0 0 0 0;
 }
-.blockTextRi button{
+
+.blockTextRi button {
     margin-top: 10px;
 }
+
+#js1{
+    height: 320px;
+}
+#js1 h1{
+    font-size: 86px;
+    text-align: center;
+    letter-spacing: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 80px 0 0 0;
+}
 @media (max-width: 1000px) {
-    .home{
+    .home {
         height: 600px;
         background-position-x: center;
         background-size: auto;
@@ -74,30 +94,34 @@
         padding: 0 40px;
         text-align: center;
     }
-    
-    .home h1{
+
+    .home h1 {
         padding: 80px 0 0 0;
         margin: 0;
         font-size: 64px;
     }
-    .home h2{
+
+    .home h2 {
         margin: 0;
         font-size: 35px;
     }
-    .home h3{
+
+    .home h3 {
         padding: 80px 0 0 0;
         margin: 0;
         font-size: 18px;
         margin: 0 auto;
     }
-    .ysj{
-        height: 600px;
+
+    .ysj {
+        height: 950px;
         color: black;
-        padding: 0 0px;
+        padding: 30px 40px 0 40px;
         width: fit-content;
         margin: 0 auto
     }
-    .blockImagelef{
+
+    .blockImagelef {
         float: none;
         height: 100px;
         width: 100px;
@@ -105,25 +129,30 @@
         background-image: url(../image/grass_block_side.png);
         background-size: cover;
         border-radius: 23px;
-        margin: 90px auto 40px auto;
-    }.blockTextRi{
+        margin: 20px auto 20px auto;
+    }
+
+    .blockTextRi {
         float: none;
         height: 360px;
         max-width: 360px;
-        margin: 00px 20px 120px 20px;
+        margin: 00px 20px 10px 20px;
         color: #000;
         text-align: center;
     }
-    .blockTextRi h1{
+
+    .blockTextRi h1 {
         font-size: 48px;
         padding: 0 0 0 0;
     }
-    .blockTextRi button{
+
+    .blockTextRi button {
         margin-top: 10px;
     }
 }
+
 @media (max-width: 635px) {
-    .home{
+    .home {
         height: 600px;
         background-position-x: center;
         background-size: auto;
@@ -133,51 +162,59 @@
         padding: 0 40px;
         text-align: center;
     }
-    
-    .home h1{
+
+    .home h1 {
         padding: 80px 0 0 0;
         margin: 0;
         font-size: 48px;
     }
-    .home h2{
+
+    .home h2 {
         margin: 0;
         font-size: 24px;
         padding: 0;
     }
-    .home h3{
+
+    .home h3 {
         display: none;
     }
-    .home h4{
+
+    .home h4 {
         display: block;
     }
-    .topbar{
+
+    .topbar {
         text-align: center;
     }
-    
-.topbarTitle{
-    line-height: 54px;
-    font-family: 'Bahnschrift';
-    font-size: 24px;
-    pointer-events: none;
-    float: none;
-}
-.topbarTitle::after{
-    border-left: 0px solid #000;
-    height: 24px;
-    content: "";
-    margin: 0 0px;
-}
-.topbar{
-    backdrop-filter: blur(36px) brightness(1.6);
-    height: 54px;
-    overflow: hidden;
-    min-width: 0;
-    width: auto;
-}
-.topbarBuLef{
-    display: none;
-}
-.topbarBuRi{
-    display: none;
-}
+
+    .topbarTitle {
+        line-height: 54px;
+        font-family: 'Bahnschrift';
+        font-size: 24px;
+        pointer-events: none;
+        float: none;
+    }
+
+    .topbarTitle::after {
+        border-left: 0px solid #000;
+        height: 24px;
+        content: "";
+        margin: 0 0px;
+    }
+
+    .topbar {
+        backdrop-filter: blur(36px) brightness(1.6);
+        height: 54px;
+        overflow: hidden;
+        min-width: 0;
+        width: auto;
+    }
+
+    .topbarBuLef {
+        display: none;
+    }
+
+    .topbarBuRi {
+        display: none;
+    }
 }

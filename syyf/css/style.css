@@ -1,0 +1,124 @@
+
+.home{
+    height: 600px;
+    background-image: url(../image/loginPic.png);
+    background-position-x: center;
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+    color: white;
+    padding: 0 40px;
+}
+
+.home h1{
+    padding: 80px 0 0 0;
+    margin: 0;
+    font-size: 64px;
+}
+.home h2{
+    padding: 00px 0 0 30px;
+    margin: 0;
+    font-size: 35px;
+}
+.home h3{
+    padding: 80px 0 0 30px;
+    margin: 0;
+    font-size: 18px;
+    width: 540px;
+}.home h4{
+    padding: 80px 0 0 0;
+    display: none;
+    margin: 0;
+    font-size: 16px;
+    margin: 0 auto;
+}
+@media (max-width: 1000px) {
+    .home{
+        height: 600px;
+        background-image: url(../image/loginPic.png);
+        background-position-x: center;
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+        padding: 0 40px;
+        text-align: center;
+    }
+    
+    .home h1{
+        padding: 80px 0 0 0;
+        margin: 0;
+        font-size: 64px;
+    }
+    .home h2{
+        margin: 0;
+        font-size: 35px;
+    }
+    .home h3{
+        padding: 80px 0 0 0;
+        margin: 0;
+        font-size: 18px;
+        margin: 0 auto;
+    }
+    
+}
+@media (max-width: 635px) {
+    .home{
+        height: 600px;
+        background-image: url(../image/loginPic.png);
+        background-position-x: center;
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+        padding: 0 40px;
+        text-align: center;
+    }
+    
+    .home h1{
+        padding: 80px 0 0 0;
+        margin: 0;
+        font-size: 48px;
+    }
+    .home h2{
+        margin: 0;
+        font-size: 24px;
+        padding: 0;
+    }
+    .home h3{
+        display: none;
+    }
+    .home h4{
+        display: block;
+    }
+    .topbar{
+        text-align: center;
+    }
+    
+.topbarTitle{
+    line-height: 54px;
+    font-family: 'Bahnschrift';
+    font-size: 24px;
+    pointer-events: none;
+    float: none;
+}
+.topbarTitle::after{
+    border-left: 0px solid #000;
+    height: 24px;
+    content: "";
+    margin: 0 0px;
+}
+.topbar{
+    backdrop-filter: blur(36px) brightness(1.6);
+    height: 54px;
+    overflow: hidden;
+    min-width: 0;
+    width: auto;
+}
+.topbarBuLef{
+    display: none;
+}
+.topbarBuRi{
+    display: none;
+}
+}

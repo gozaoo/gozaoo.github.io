@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./css/lrc.css" />
+	<link rel="stylesheet" href="css/playerGui.css">
+</head>
+
+<body class="body">
+	<div class="bg1"></div>
+    <div class="bg2"></div>
+	<div id="playerBox">
+		<!--打算接入网易云API实现自动化-->
+		<div onclick="play()" class="musicbuttom" id="musicPlay">
+			<img src="./image/play.png" alt="">
+		</div>
+		<input onkeydown="kydone(event);" id="musicInput" type="text" placeholder="输入曲库音乐">
+		<div id="backlab"></div>
+	</div>
+	<ul id="lyric">
+
+	</ul>
+	<audio id="audio" src="">
+		当前浏览器不支持audio
+	</audio>
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+	<script src="./js/lrcToJson.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/PlayerGui.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/main.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/playerMusic.js"></script>
+	<script src="./js/playerbuttom.js"></script>
+	
+</body>
+
+</html>

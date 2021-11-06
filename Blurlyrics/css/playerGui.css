@@ -1,0 +1,56 @@
+.musicbuttom{
+    height: 24px;
+    width: 24px;
+    padding: 4px;
+    border-radius: 7px;
+    background: rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(.20,.60,.4,1);
+}
+
+.musicbuttom:hover{
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.musicbuttom img {
+    height: 24px;
+    width: 24px;
+}
+
+.mulabone{
+    margin: 8px 10px;
+    border-radius: 10px;
+    padding: 0px 5px 0 0px;
+    background: rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(.20,.60,.4,1);
+    min-height: 50px;
+}
+.mulabone:hover{
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.mulabonea{
+    padding: 8px 0 8px 54px;
+    font-size: 18px;
+    line-height: 40px;
+    display: inline-block;
+}
+.mulaboneb::before{
+    margin: 0 0 0 10px;
+}
+.mulaboneb{
+    padding: 8px 0 8px 6px;
+    line-height: 40px;
+    display: inline-block;
+}
+
+.mulabonek{
+    background: url(https://retiehe.com/backend/bing/1080p) no-repeat center center;
+	background-size: cover;
+    height: 40px;
+    display: inline-block;
+    margin: 8px 0 0 0;
+    position: absolute;
+    left: 18px;
+    width:40px;
+    border-radius: 6px;
+}

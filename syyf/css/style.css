@@ -84,7 +84,7 @@
     padding: 80px 0 0 0;
 }
 @media (max-width: 1000px) {
-    .home {
+    #home {
         height: 600px;
         background-position-x: center;
         background-size: auto;
@@ -95,18 +95,18 @@
         text-align: center;
     }
 
-    .home h1 {
+    #home h1 {
         padding: 80px 0 0 0;
         margin: 0;
         font-size: 64px;
     }
 
-    .home h2 {
+    #home h2 {
         margin: 0;
         font-size: 35px;
     }
 
-    .home h3 {
+    #home h3 {
         padding: 80px 0 0 0;
         margin: 0;
         font-size: 18px;
@@ -152,7 +152,7 @@
 }
 
 @media (max-width: 635px) {
-    .home{
+    #home{
         height: 600px;
         background-image: url(../image/loginPic.png);
         background-position-x: center;
@@ -164,20 +164,20 @@
         text-align: center;
     }
     
-    .home h1{
+    #home h1{
         padding: 80px 0 0 0;
         margin: 0;
         font-size: 48px;
     }
-    .home h2{
+    #home h2{
         margin: 0;
         font-size: 24px;
         padding: 0;
     }
-    .home h3{
+    #home h3{
         display: none;
     }
-    .home h4{
+    #home h4{
         display: block;
     }
 

@@ -149,6 +149,13 @@
     .blockTextRi button {
         margin-top: 10px;
     }
+    #js1 h1{
+        font-size: 54px;
+        text-align: center;
+        letter-spacing: 8px;
+        color: rgba(255, 255, 255, 0.7);
+        padding: 80px 0 0 0;
+    }
 }
 
 @media (max-width: 635px) {
@@ -214,5 +221,12 @@
 
     .topbarBuRi {
         display: none;
+    }
+    #js1 h1{
+        font-size: 32px;
+        text-align: center;
+        letter-spacing: 6px;
+        color: rgba(255, 255, 255, 0.7);
+        padding: 80px 0 0 0;
     }
 }

@@ -109,8 +109,8 @@
     }.blockTextRi{
         float: none;
         height: 360px;
-        width: 360px;
-        margin: 00px 30px 120px 30px;
+        max-width: 360px;
+        margin: 00px 20px 120px 20px;
         color: #000;
         text-align: center;
     }

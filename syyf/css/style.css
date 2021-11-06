@@ -74,13 +74,13 @@
 }
 
 #js1{
-    height: 320px;
+    height: 300px;
 }
 #js1 h1{
-    font-size: 86px;
+    font-size: 94px;
     text-align: center;
     letter-spacing: 12px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.7);
     padding: 80px 0 0 0;
 }
 @media (max-width: 1000px) {

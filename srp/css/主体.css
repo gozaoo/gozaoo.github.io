@@ -138,6 +138,26 @@ A {
     transform: translate(-50%, 0px) scale(1);
 }
 
+.mb-search-box{
+    
+    display: none;
+}
+
+#searchmb {
+    font-family: "Bahnschrift";
+    text-align: center;
+    height: 42px;
+    margin: 30px 0 0 0;
+    background: rgba(255, 255, 255, 0.60);
+    border: none;
+    border-radius: 40px;
+    outline: none;
+    min-width: 280px;
+    backdrop-filter: blur(32px);
+    font-size: 14px;
+    z-index: 2;
+}
+
 .srselc:hover {
     opacity: 100%;
     pointer-events: auto;

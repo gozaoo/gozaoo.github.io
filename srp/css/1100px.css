@@ -18,14 +18,16 @@
         margin: 100px auto 0 auto;
     }
     .ad{
-        width: 31px;
-            
-            left: 100%;
+        transform: translate(-100%,-56px);
+        opacity: 0;
     }
     #search{
         position: absolute;
     }
     .search-box{
         display: none;
+    }
+    .mb-search-box{
+        display: block;
     }
 }

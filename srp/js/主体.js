@@ -53,6 +53,22 @@ function kydone(e) {
 	}
 }
 
+function kydonemb(e) {
+	var evt = window.event || e;
+	if (evt.keyCode == 13) {
+		//回车事件
+		var inps
+		var reg =
+			/^([hH][tT]{2}[pP]:\/\/|[hH][tT]{2}[pP][sS]:\/\/)(([A-Za-z0-9-~]+)\.)+([A-Za-z0-9-~\/])+$/;
+		var inps = document.getElementById('searchmb').value;
+		if (!reg.test(inps)) {
+			window.open("https://quark.sm.cn/s?q=" + inps);
+		} else {
+			window.open(inps);
+		}
+	}
+}
+
 function asrc(b) {
 	var srv = b;
 	var inps = document.getElementById('search').value;

@@ -1,5 +1,21 @@
 /* 搜索框+时间+背景 */
 
+@font-face {
+
+    /* font-properties */
+
+    font-family: Bahnschrift;
+
+    src:url(../font/bahnschrift.ttf);/*url(../font/HarmonyOS_Sans_SC_Black.ttf),
+    
+    url(../font/HarmonyOS_Sans_SC_Bold.ttf),
+    url(../font/HarmonyOS_Sans_SC_Medium.ttf),
+    url(../font/HarmonyOS_Sans_SC_Regular.ttf),
+    url(../font/HarmonyOS_Sans_SC_Thin.ttf),
+    url(../font/HarmonyOS_Sans_SC_Light.ttf);  IE9 */
+}
+
+
 body {
     min-width: 1080px;
     padding: 0;

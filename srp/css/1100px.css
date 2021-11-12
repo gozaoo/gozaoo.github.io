@@ -1,0 +1,31 @@
+@media (max-width: 1100px) {
+    body{
+        min-width: 0px;
+    }
+    .cs{
+        width: fit-content;
+        height: fit-content;
+    }
+}
+@media (max-width: 620px) {
+    .weatherblock{
+        background: rgba(255, 255, 255, 0.60);
+        height: 30px;
+        opacity: 0;
+        top: -100px;
+    }
+    .timebox{
+        margin: 100px auto 0 auto;
+    }
+    .ad{
+        width: 31px;
+            
+            left: 100%;
+    }
+    #search{
+        position: absolute;
+    }
+    .search-box{
+        display: none;
+    }
+}

@@ -98,7 +98,7 @@ A {
 }
 
 #search {
-    font-family: "Bahnschrift", 'Segoe UI';
+    font-family: "Bahnschrift";
     position: relative;
     transform: translate(-50%, 0px);
     left: 50%;
@@ -154,7 +154,7 @@ A {
     border: none;
     border-radius: 12px;
     outline: none;
-    min-width: 280px;
+    min-width: 300px;
     font-size: 14px;
     z-index: 2;
 }

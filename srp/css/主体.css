@@ -155,9 +155,11 @@ A {
     border-radius: 40px;
     outline: none;
     min-width: 280px;
-    backdrop-filter: blur(32px);
     font-size: 14px;
     z-index: 2;
+}
+#searchmb:focus {
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .srselc:hover {

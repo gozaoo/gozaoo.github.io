@@ -139,15 +139,17 @@ A {
 }
 
 .mb-search-box{
-    
+    left: 50%;
+    top: 100%;
     display: none;
+    position: fixed;
+    transform: translate(-50%, -100px);
 }
 
 #searchmb {
     font-family: "Bahnschrift";
     text-align: center;
     height: 42px;
-    margin: 30px 0 0 0;
     background: rgba(255, 255, 255, 0.60);
     border: none;
     border-radius: 40px;

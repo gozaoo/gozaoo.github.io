@@ -101,7 +101,7 @@ A {
 }
 
 #search {
-    font-family: "Bahnschrift";
+	font-family: Bahnschrift,font;
     position: relative;
     transform: translate(-50%, 0px);
     left: 50%;
@@ -151,7 +151,7 @@ A {
 }
 
 #searchmb {
-    font-family: "Bahnschrift";
+	font-family: Bahnschrift,font;
     text-align: center;
     height: 42px;
     background: rgba(255, 255, 255, 0.60);

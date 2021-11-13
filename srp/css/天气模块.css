@@ -7,7 +7,7 @@
 	transform: translate(35px,-10px);
 	position: fixed;
 	display: none;
-	font-family: "Bahnschrift", 'Microsoft YaHei';
+	font-family: Bahnschrift,font;
 	top: 25px;
 }
 .weatherbody{
@@ -21,7 +21,6 @@
 }
 #wtgetwtype{
 	margin: 0px 0 0 0;
-	font-family: '微软雅黑';
 	transform: translate(-16px, 24px);
 	text-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 22%);
 }

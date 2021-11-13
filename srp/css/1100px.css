@@ -58,6 +58,16 @@
 }
 
 @media (max-height: 400px) {
+    .weatherblock {
+        background: rgba(255, 255, 255, 0.60);
+        height: 30px;
+        opacity: 0;
+        top: -100px;
+    }
+    .ad {
+        transform: translate(-100%, -56px);
+        opacity: 0;
+    }
     .timebox {
         filter: blur(10px);
     }
@@ -68,6 +78,7 @@
 
     .mb-search-box{
         top: 0px;
+        display: block;
         transform: translate(-50%, 60px);
     }
 }

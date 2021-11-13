@@ -11,7 +11,7 @@ body {
 }
 
 div{
-    transition: all 0.6s cubic-bezier(0.000, 0.4, 0.5, 1);
+    transition: all 0.3s cubic-bezier(0.000, 0.4, 0.5, 1);
 }
 
 A {
@@ -99,6 +99,11 @@ A {
     width: fit-content;
     height: fit-content;
 }
+input,textarea { 
+    color: rgb(127, 85, 255); /* 光标的颜色*/
+    text-shadow: 0px 0px 0px #000000; /* 文本颜色 */ 
+    -webkit-text-fill-color: transparent;
+ } 
 
 #search {
 	font-family: Bahnschrift,font;
@@ -154,7 +159,7 @@ A {
 	font-family: Bahnschrift,font;
     text-align: center;
     height: 42px;
-    background: rgba(255, 255, 255, 0.60);
+    background: rgba(255, 255, 255, 0.50);
     border: none;
     border-radius: 12px;
     outline: none;

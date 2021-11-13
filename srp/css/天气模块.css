@@ -10,6 +10,9 @@
 	font-family: Bahnschrift,font;
 	top: 25px;
 }
+.weatherblock:hover{
+	background: rgba(255, 255, 255, 0.3);
+}
 .weatherbody{
 	width: 150px;
 	height: 100px;

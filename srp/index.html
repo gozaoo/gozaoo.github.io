@@ -16,11 +16,12 @@
     <script src="./js/天气模块.js" type="text/javascript" charset="utf-8"></script>
     <script src="./js/闲聊模块.js" type="text/javascript" charset="utf-8"></script>
     <script src="./js/主体.js" type="text/javascript" charset="utf-8"></script>
-    
-    <link rel="stylesheet" href="../css/topbar.css">
+    <!--
+    <script src="./js/滑动模块.js" type="text/javascript" charset="utf-8"></script>
+    --><link rel="stylesheet" href="../css/topbar.css">
 </head>
 
-<body onload="start()">
+<body id="body" onload="start()">
     <!-- 
 		自启脚本: 主体.js 
 			加载函数: 时间；闲聊模块；天气模块
@@ -107,6 +108,62 @@
     <div class="mb-search-box">
         <input autocomplete="off" value="" onkeydown="kydonemb(event);" id="searchmb" placeholder="">
     </div>
+    <script>
+        var startX = 0,
+            startY = 0;
+        function touchStart(evt){
+            try{
+                var touch = evt.touches[0], //获取第一个触点
+                        x = Number(touch.pageX), //页面触点X坐标
+                        y = Number(touch.pageY); //页面触点Y坐标
+                //记录触点初始位置
+                startX = x;
+                startY = y;
+            }catch(e){
+                console.log(e.message)
+            }
+        }
+     
+        function touchMove(){
+            try{
+                var touch = evt.touches[0], //获取第一个触点
+                        x = Number(touch.pageX), //页面触点X坐标
+                        y = Number(touch.pageY); //页面触点Y坐标
+                //判断滑动方向
+                if (y - startY>0) {
+                    console.log('下滑了！');
+                }else{
+                    console.log('上滑了！');
+                }
+            }catch(e){
+                console.log(e.message)
+            }
+        }
+     
+        function touchEnd(){
+            try{
+                var touch = evt.touches[0], //获取第一个触点
+                        x = Number(touch.pageX), //页面触点X坐标
+                        y = Number(touch.pageY); //页面触点Y坐标
+                //判断滑动方向
+                if (y - startY>0) {
+                    console.log('下滑了！');
+                }else{
+                    console.log('上滑了！');
+                }
+            }catch(e){
+                console.log(e.message)
+            }
+        }
+     
+        //绑定事件
+        function bindEvent(){
+            document.addEventListener('touchstart',touchStart,false);
+            document.addEventListener('touchmove',touchMove,false);
+            document.addEventListener('touchend',touchEnd,false);
+        }
+     
+    </script>
 </body>
 
 </html>

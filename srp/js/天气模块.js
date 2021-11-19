@@ -9,7 +9,7 @@ function getweather() {
 		.then(data => {
 			console.log('\n########################################################################\n' + '天气 API Reget记录 Time:' + document.getElementById('time').innerHTML + document.getElementById('time-s').innerHTML + '\n########################################################################')
 			document.getElementById("wtgetwendu").innerHTML = data.now.temp + '°'
-			var iconurl = "https://raw.githubusercontent.com/qwd/WeatherIcon/master/weather-icon-S2/256/" + data.now.icon + ".png"
+			var iconurl = "https://gozaoo.github.io/image/weather/256/" + data.now.icon + ".png"
 			console.log('温度：' + data.now.temp + '°' + '\n天气类型:' + data.now.text + '\n体感温度：' + data.now.feelsLike)
 			console.log('APIURL结果测试:' + weatherApiLink)
 			console.log('图片URL结果测试:' + iconurl)

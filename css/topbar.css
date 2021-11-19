@@ -99,7 +99,10 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
 .link:hover{
     border-bottom: 2px solid #fff;
 }
-
+::selection {
+    background:rgb(127, 85, 255);
+    color:#fff;
+}
 .button{
     background: rgba(0,103,184);
     border: 0;

@@ -1,6 +1,6 @@
 .weatherblock{
 	padding: 10px;
-	width: 150px;
+	width: 160px;
 	height: 100px;
 	border-radius: 16px;
 	overflow: hidden;
@@ -14,7 +14,7 @@
 	background: rgba(255, 255, 255, 0.3);
 }
 .weatherbody{
-	width: 150px;
+	width: 160px;
 	height: 100px;
 	color: white;
 }

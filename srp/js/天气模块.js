@@ -24,5 +24,6 @@ function getweather() {
 		.catch(console.error)
 	
 	})
+	start();
 	t = setTimeout('getweather()', 120000)
 }

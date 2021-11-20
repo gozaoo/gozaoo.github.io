@@ -25,7 +25,7 @@ function bodyTime() {
 	if (document.getElementById('time-s').innerHTML != ":" + s) {
 		document.getElementById('time-s').innerHTML = ":" + s
 	}
-	t = setTimeout('bodyTime()', 1)
+	t = setTimeout('bodyTime()', 50)
 }
 
 function checkTime(i) {

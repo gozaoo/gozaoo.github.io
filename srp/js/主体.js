@@ -4,6 +4,9 @@ function start() {
 	consoleOPES(); //console推广
 	bodyTime(); // 系统消息
 	reget();// 闲聊模块
+	
+    document.getElementById("loadspinner").style.height="0px"
+    document.getElementById("loadspinner").style.width="0px"
 }
 
 function consoleOPES(){

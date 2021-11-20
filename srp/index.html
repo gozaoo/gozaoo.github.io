@@ -97,7 +97,7 @@
             <div id="time-s" class="time-s">:00</div>
         </div>
         <div class="search-box">
-            <input autocomplete="off" value="" onkeydown="kydone(event);" id="search" placeholder="Enter your question">
+            <input autocomplete="off" value="" onkeydown="kydone(event);" id="search" placeholder="输入内容后回车......">
             <div class="srselc">
                 <div class="srselcbox" onclick="asrc('taobao');"><img class="srselcimg"
                         src="https://pic.liesio.com/2021/05/22/45256cf030fdd.png"></div>
@@ -114,62 +114,6 @@
     <div class="mb-search-box">
         <input autocomplete="off" value="" onkeydown="kydonemb(event);" id="searchmb" placeholder="">
     </div>
-    <script>
-        var startX = 0,
-            startY = 0;
-        function touchStart(evt){
-            try{
-                var touch = evt.touches[0], //获取第一个触点
-                        x = Number(touch.pageX), //页面触点X坐标
-                        y = Number(touch.pageY); //页面触点Y坐标
-                //记录触点初始位置
-                startX = x;
-                startY = y;
-            }catch(e){
-                console.log(e.message)
-            }
-        }
-     
-        function touchMove(){
-            try{
-                var touch = evt.touches[0], //获取第一个触点
-                        x = Number(touch.pageX), //页面触点X坐标
-                        y = Number(touch.pageY); //页面触点Y坐标
-                //判断滑动方向
-                if (y - startY>0) {
-                    console.log('下滑了！');
-                }else{
-                    console.log('上滑了！');
-                }
-            }catch(e){
-                console.log(e.message)
-            }
-        }
-     
-        function touchEnd(){
-            try{
-                var touch = evt.touches[0], //获取第一个触点
-                        x = Number(touch.pageX), //页面触点X坐标
-                        y = Number(touch.pageY); //页面触点Y坐标
-                //判断滑动方向
-                if (y - startY>0) {
-                    console.log('下滑了！');
-                }else{
-                    console.log('上滑了！');
-                }
-            }catch(e){
-                console.log(e.message)
-            }
-        }
-     
-        //绑定事件
-        function bindEvent(){
-            document.addEventListener('touchstart',touchStart,false);
-            document.addEventListener('touchmove',touchMove,false);
-            document.addEventListener('touchend',touchEnd,false);
-        }
-     
-    </script>
 </body>
 
 </html>

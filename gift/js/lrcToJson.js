@@ -1,5 +1,5 @@
 function getMusicDate(){
-    fetch("http://localhost:3000/lyric?id="+id)
+    fetch(cloud+"lyric?id="+id)
     .then(response => response.json())
     .then(data => {
         createLrcObj(data.lrc.lyric);

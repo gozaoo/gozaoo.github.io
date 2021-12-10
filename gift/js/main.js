@@ -76,7 +76,7 @@ function kydone(e) {
 
 function Search(id) {
   if (id == undefined) {} else {
-    fetch(cloud + '/search?keywords=' + id)
+    fetch(cloud + 'search?keywords=' + id)
       .then(response => response.json())
       .then(data => {
         if (data === undefined) {

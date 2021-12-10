@@ -32,7 +32,7 @@
 body{
     padding: 0;
     margin: 0;
-    font-family: font;
+    font-family: Bahnschrift,font;
 }
 body::-webkit-scrollbar {/*滚动条整体样式*/
     width: 12px;     /*高宽分别对应横竖滚动条的尺寸*/

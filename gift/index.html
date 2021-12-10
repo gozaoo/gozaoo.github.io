@@ -1,0 +1,63 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    
+	<title>生日快乐！李振光！</title>
+	<link rel="stylesheet" type="text/css" href="./css/lrc.css">
+	<link rel="stylesheet" href="./css/SearchBar.css">
+	<link rel="stylesheet" href="./css/topbar.css">
+	<link rel="stylesheet" href="./css/selectbar.css">
+</head>
+
+<body class="body">
+	<div class="bg1"></div>
+	<div class="bg2"></div>
+	<div class="titlebar">
+		<div class="titlebackblur"></div>
+		<div class="titleMusicImage"></div>
+		<div class="titleText">
+			<div id="titleMusicName"></div>
+			<div id="titleMusicAC"></div>
+		</div>
+	</div>
+	<div class="selectbar">
+		<div onclick="play()" class="musicbuttom" id="musicPlay">
+			<img src="./image/play.png" alt="">
+		</div>
+		<div onclick="download();" class="musicbuttom" id="musicPlay">
+			<img src="./image/download.png" alt="">
+		</div>
+		<div id="slider" class="slider">
+			<div id="processor" class="processor" style="">
+
+			</div>
+			<div id="audioTime">00:00&nbsp;&nbsp;&nbsp;00:00</div>
+			<div id="controller" class="controller" style=""></div>
+		</div>
+	</div>
+	<ul id="lyric">
+		<li> 啊偶o_o .... 你好像还没输入任何内容 </li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<audio id="audio" src="">
+		当前浏览器不支持audio
+	</audio>
+    <script src="./js/lrcToJson.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/main.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/playerMusic.js"></script>
+	<script src="./js/playerbuttom.js"></script>
+    <script>
+        setTimeout(() => {
+            var cloud = 'http://cloud-music.pl-fe.cn/'
+            setid(165394,'https://p2.music.126.net/4dpvc7FAu0ZTJUuh53Ipxg==/3435973848250482.jpg','生日快乐 | 生日快乐哦，屁猪~','汪苏泷 ');
+        }, 1000);
+        </script>
+
+
+</body>
+
+</html>

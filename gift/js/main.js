@@ -2,7 +2,7 @@ var id;
 var lrcFile;
 var picUrl = new Array();
 chuShi();
-var cloud = 'http://localhost:3000/'
+var cloud = 'http://cloud-music.pl-fe.cn/'
 var Console = [
   '============================================',
   'BlurLRC',
@@ -76,7 +76,7 @@ function kydone(e) {
 
 function Search(id) {
   if (id == undefined) {} else {
-    fetch('http://localhost:3000/search?keywords=' + id)
+    fetch(cloud + '/search?keywords=' + id)
       .then(response => response.json())
       .then(data => {
         if (data === undefined) {

@@ -4,213 +4,105 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://i.postimg.cc/pdpW4gSg/8ad00db9-E370743-663e7b5a.png">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <link rel="shortcut icon" href="../ico.png">
+    <link rel="stylesheet" href="./css/lib.css">
+    <link rel="stylesheet" href="/css/index.css">
     <title>Dogeの小站</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: black;
-            min-width: 480px;
-            min-height: 700px;
-        }
 
-        A {
-            text-decoration: none
-        }
-
-        .bg {
-            position: fixed;
-            background: url(https://pic.liesio.com/2021/04/15/09ba91ae57ea2.jpg) no-repeat center center;
-            background-size: cover;
-            background-attachment: fixed;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            transform: scale(1.000);
-            filter: brightness(85%);
-            transform: scale(1.18);
-            z-index: -9999;
-        }
-
-        .bgvbox {
-            position: fixed;
-            z-index: -9998;
-            left: 50%;
-            top: 50%;
-            width: 100%;
-            height: 100%;
-            transform: translate(-50%, -50%);
-        }
-
-        .bgv {
-            width: 100%;
-            height: 100%;
-        }
-
-        .bodybox {
-            position: absolute;
-            width: 500px;
-            height: fit-content;
-            min-height: 100%;
-            backdrop-filter: blur(8px);
-            background: rgba(255, 255, 255, 0.46);
-            animation: dh 0.6s cubic-bezier(0.000, 0.72, 0.45, 1);
-        }
-
-        .title {
-            font-size: 48px;
-            color: rgba(255, 255, 255, 0.8);
-            text-align: center;
-            margin: 50px 0px 35px 0px;
-        }
-
-        .audio {
-            width: 440px;
-            height: 38px;
-            background: rgba(255, 255, 255, 0.9);
-            text-align: center;
-            margin: 0px 30px 20px 30px;
-            padding: 16px 0px 0px 0px;
-            border-radius: 27px;
-        }
-
-        audio {
-            width: 440px;
-            height: 54px;
-            background: rgba(255, 255, 255, 0.8);
-            text-align: center;
-            margin: 0px 30px 20px 30px;
-            border-radius: 27px
-        }
-
-        audio:focus {
-            outline: none;
-        }
-
-        .neir {
-            background: rgba(255, 255, 255, 0.4);
-            width: 420px;
-            margin: 0px 30px 40px 30px;
-            padding: 10px;
-            border-radius: 17px;
-        }
-
-        @keyframes dh {
-            0% {
-                transform: translateX(-500px);
-                opacity: 0.1;
-            }
-
-            100% {
-                transform: translateX(0px);
-                opacity: 1;
-            }
-        }
-
-        .nt {
-            color: rgb(46, 139, 134);
-            margin: 0px 0px 10px 0px;
-
-        }
-
-        .nt::before {
-            margin: 0px 4px 0px 10px;
-            content: "|";
-        }
-
-        .nzb {
-            display: block;
-            color: rgb(0, 60, 128);
-            background: rgba(255, 255, 255, 0);
-            border-radius: 8px;
-            width: fit-content;
-            padding: 0px 10px 0px 0px;
-            -webkit-transition: all 160ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
-            -moz-transition: all 160ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
-            -o-transition: all 160ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
-            transition: all 160ms cubic-bezier(0.000, 0.715, 0.445, 0.995);
-        }
-
-        .nzb::before {
-            margin: 0px 8px 0px 10px;
-            content: "坐标";
-            color: rgb(255, 255, 255);
-        }
-
-        .nzb:hover {
-            margin: 0px 0px 0px 10px;
-            background: rgba(255, 255, 255, 0.18);
-        }
-
-        .nr {
-            background: rgba(255, 255, 255, 1);
-            color: rgb(50, 50, 50);
-            padding: 13px;
-            margin: 15px 4px 0px 4px;
-            border-radius: 13px;
-        }
-    </style>
 </head>
 
 <body>
+    <video autoplay muted loop class="bgv">
+        <source src="./video.mp4">
+    </video>
     <div class="bg"></div>
-    <div class="bgvbox">
-        <video autoplay muted loop class="bgv">
-            <source src="./v">
-        </video>
-    </div>
     <div id="loadspinner" class="spinner">
         <link rel="stylesheet" href="../css/topbar.css">
-        <script src="../js/main.js"></script>
         <div class="double-bounce1"></div>
         <div class="double-bounce2"></div>
     </div>
     <div class="bodybox">
-        <div class="title">Dogeの小站 导航栏</div>
-        <audio class="aud" autoplay controls loop>
-            <source src="https://music.163.com/song/media/outer/url?id=1297743127.mp3">
-            <source src="https://music.163.com/song/media/outer/url?id=35231860.mp3">
-            您的浏览器不支持 audio 标签。
-        </audio>
-        <div class="audio">
-            <a href="https://cll.rthe.xyz/noaudio">>去无音乐主页<</a> </div> <div class="neir">
-                    <div class="nt">我的小站导航（原地tp）</div>
-                    <a class="nzb" href="https://cll.rthe.xyz/">https://cll.rthe.xyz/ (应该通用吧..)</a>
-                    <div class="nr">
-                        就一句：好不好看!
-                        <br />补充一句:没bug，就是靠左的!
+        <div class="index_TitleBox index_box">Doge小站 Github站点</div>
+
+        <!--
+
+                    <div class="index_box" style="text-align: center;">
+            <iframe style="
+            border-radius: 20px; overflow: hidden;" frameborder="no" border="0" width="100%"
+                src="//music.163.com/outchain/player?type=2&id=1824513851&auto=1"></iframe>
+        </div>
+
+        -->
+        <div class="index_box">
+            <div class="lib_diary">
+                <div class="lib_diaryTitle">
+                    <div class="lib_diaryTitleIco" style="
+                    background-color: rgb(232,72,38);"></div>
+                    <div class="lib_diaryTitleText">最新动态</div>
+                </div>
+                <div class="lib_diaryText">
+                    # BlurLyric 更新 <br>
+                    更新内容<br>
+                    <li>更新网易云MV功能!</li>
+                    <li>优化界面渲染，不显示的界面将使用<div class="lib_diaryCodeInline">display: none</div>隐藏项目</li>
+                    <li>引入winbox.js ,plyr.js作为MV和音频播放控制器载体</li>
+                    <li>优化数据打印器，使用以下代码打印更新日志：</li>
+                    <div class="lib_diaryCodeBox">> funConsole(updateDiary)</div>
+                </div>
+            </div>
+            <div class="lib_diary">
+                <div class="lib_diaryTitle">
+                    <div class="lib_diaryTitleIco" style="
+                    background-color: rgb(100,187,92);"></div>
+                    <div class="lib_diaryTitleText">分享</div>
+                </div>
+                <div class="lib_diaryText">
+                    # 软件推荐 <a class="lib_link" href="https://wantwords.thunlp.org/">万词王 [wantwords.thunlp.org]</a>
+                </div>
+            </div>
+            <div class="lib_diary">
+                <div class="lib_diaryTitle">
+                    <div class="lib_diaryTitleIco" style="
+                    background-color: rgb(92, 141, 187);"></div>
+                    <div class="lib_diaryTitleText">随机鼓励</div>
+                </div>
+                <div class="lib_diaryText">
+                    <a id="libJS_guLiGet">Loading.........</a>
+                </div>
+            </div>
+        </div>
+        <div class="index_box">
+            <div class="lib_diaryTitle">
+                <div class="lib_diaryTitleIco" style="
+                background-color: rgb(0, 128, 255);"></div>
+                <div class="lib_diaryTitleText">服务卡片</div>
+            </div>
+            <div style="display: flex;">
+                <!--天气卡片-->
+                <div class="lib_diary">
+                    <div class="lib_diaryTitle">
+                        <div class="lib_diaryTitleIco" style="
+                    background-color: rgb(182, 212, 243);"></div>
+                        <div class="lib_diaryTitleText">天气</div>
+                    </div>
+                    <div class="lib_diaryText" style="display:flex;text-align: center;">
+                        <div style="margin: 0 auto;display:flex"><img id="weathericon" style="width: 100px;">
+                            <div>
+                                <p><a id="wtgetwtype"></a><br><a style="font-size: 34px;"
+                                        id="wtgetwendu">Loading.........</a></p>
+                            </div>
+                        </div>
 
                     </div>
-        </div>
-        <div class="neir">
-            <div class="nt">好用起始页</div>
-            <a class="nzb" href="https://cll.rthe.xyz/srp">https://cll.rthe.xyz/srp (电脑版)</a>
-            <a class="nzb" href="https://cll.rthe.xyz/srpq">https://cll.rthe.xyz/srpq (电脑夸克引擎)</a>
-            <a class="nzb" href="https://cll.rthe.xyz/srm">https://cll.rthe.xyz/srm (支持360dp宽度手机)</a>
-            <div class="nr">花了很多心血，真的!
-                <br />未来会在手机版加入一言呢!
-                <br />你们觉得需要在手机版增加必应搜索引擎吗？
+                </div>
+                
             </div>
-        </div>
-        <div class="neir">
-            <div class="nt">学习成果</div>
-            <a class="nzb" href="https://cll.rthe.xyz/test">https://cll.rthe.xyz/test</a>
-            <div class="nr">会记录一些我学计算机的脚印，小白一个别打我QVQ，会放我实践过程中的一些小玩意，欢迎看看
-            </div>
-        </div>
-        <div class="neir">
-            <div class="nt">联系方式</div>
-            <div class="nr">QQ: 2261129603
-                <br />邮箱: er_gouo@qq.com
-            </div>
-            <a data-miniprogram-appid="d3hkZThhYzBhMjExMzVjMDdk"
-                data-miniprogram-path="aW5kZXgvcGFnZXMvaDUvaDUuaHRtbD93ZWJ1cmw9aHR0cHMlM0ElMkYlMkZjbGljay5tZWl0dWFuLmNvbSUyRnQlM0Z0JTNEMSUyNmMlM0QxJTI2cCUzRE9XTXBaLXV6SUZPVmU2SnlPT05zM2RYdXFWMHFjQWYtci1LQ3ZIZFhpTmRNT2ZiMTRSMzZ3Mmd1VEFIOHNwZjFNVW1oV05wRFFXa2h2RWp5TXd3VHVxeW1UZTc1Uy0taWNHUWtKZVhSSFZ2ZGhRSTBwMmVNcFFReGxQU2ZJNkZNYVhSQlVWR2VXdWoyYzBNblRPZWJyeklMQjJ6V04zYVVaTllkS0JIX21jeTR5VXJpMFlJTDk1R25hQ2Z6cXIydEtVN3JQdTlobHEzNlNhd2QxN3pxdTg5WlFjLWFwX1AxY1ZUeG5sWkc2T2xoVWx1Z1NNWE9tR1F4c0l6aEhPRXdFb2l2NTc4NWV2X1Vpb1J2aGtDYkpqNnV0WVZpVWtjYWo1bnBSQ01xM2lBYzJJZVJlM1F2ZDVEaE5Hai1OMjU2QThobmdjN3pQTDNjcy1KQldiWnpuc0ItekZ3NmlSczVsY3A4VVNBaTBxMDNKUllhbDhUenZVSVRxZzRjQmFMcmJlbjROeXpsT1pYbmtPLXNDTW1sNU5rZUVkVHU3NTFrV0RpbjRLOEFGVW9qUzRrTzNicllXZ3ZLbjY4d2x1MXlwQnAzb3hTWTBJS1U1ZmxGTjlha1dRYl9ENEQ3WW1lb3lnVzJFT3dfVEQ0VkRGbXgwSGJzMHJDcE5HUTZXMWxqcHBlanpVSjRtYlBNMmNNV09GdUdxRTFDTE5hXzFXbXpyUENJZVRfbFoya2poN0E1cnFFM0RDcXVtbkFvMDhONlRBVDFSV2c0RkphU3pfMmhxOXk5OVFnN0hzc2lCQ3pGMkY4M2NweDZmbE5zdnRfZEU4V2VwS2l6UXl0QXBmbXVNekZKV212RlJRYmQ3alYxMnFhZGdjNEdRdFdSY2ZkMXhvTjMyUTB4MkNZJmxjaD1jcHM6d2FpbWFpOjU6YjI3MmYzZTIzZmUwOTc0NjMzNzA2YWE4MDBhNmU3ZTM6Z29uZ3NpJmZfdG9rZW49MSZmX3VzZXJJZD0x"
-                href="#">先点这个！</a>
-
         </div>
     </div>
+    <script src="../js/main.js"></script>
+
+    <script src="../js/lib.js"></script>
 </body>
 
 </html>

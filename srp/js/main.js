@@ -149,7 +149,9 @@ function kydone(e) {
 	var evt = window.event || e;
 	if (evt.keyCode == 13) {
 		//回车事件
-		var inps = document.getElementById('input').value;
+        
+		var inps = document.getElementById('input').innerText;
+
 		var reg =
 			/^(?=^.{3,255}$)[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+$/;
         var reg2 =
@@ -162,6 +164,9 @@ function kydone(e) {
 			window.open(searchLinkBefore + inps + searchLinkAfter);
 		}
 	}
+    setTimeout(() => {
+        document.getElementById('input').innerHTML = document.getElementById('input').innerText;
+    }, 1);
 }
 function kydoneTopTitle() {
     setTimeout(() => {

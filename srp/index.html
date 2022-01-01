@@ -4,118 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-    <title>好用起始页</title>
-    <link rel="shortcut icon" href="https://i.postimg.cc/pdpW4gSg/8ad00db9-E370743-663e7b5a.png">
-    <link rel="stylesheet" type="text/css" href="./css/主体.css" />
-    <link rel="stylesheet" type="text/css" href="./css/闲聊模块.css" />
-    <link rel="stylesheet" type="text/css" href="./css/天气模块.css" />
-    <link rel="stylesheet" type="text/css" href="./css/1100px.css" />
-
-
-    <script src="./js/天气模块.js" type="text/javascript" charset="utf-8"></script>
-    <script src="./js/闲聊模块.js" type="text/javascript" charset="utf-8"></script>
-    <script src="./js/主体.js" type="text/javascript" charset="utf-8"></script>
-    <!--
-    <script src="./js/滑动模块.js" type="text/javascript" charset="utf-8"></script>
-    -->
-    <link rel="stylesheet" href="../css/topbar.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新标签页</title>
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 
-<body id="body" onload="start()">
+<body>
+    <div class="blurbg"></div>
+    <div id="alertOutSide"></div>
 
-    <div id="loadspinner" class="spinner">
-        <div class="double-bounce1"></div>
-        <div class="double-bounce2"></div>
-    </div>
-    <!-- 
-		自启脚本: 主体.js 
-			加载函数: 时间；闲聊模块；天气模块
-	-->
-
-
-    <!-- 浏览器兼容模块设置 -->
-
-    <div class="tips">您的浏览器内核过老!无法正常浏览！！！<br />请更换/更新浏览器,使用最新 Edge/Chrome/百分浏览器
-        获得网页完整体验<br />若您继续使用，您将遇到下列问题：<br />模糊效果失效<br />透明效果失效<br />模块显示出现问题<br />未知的兼容问题<br />漏洞攻击<br />我们网页不植入任何木马，仅使用此老版本css能显示的代码的东西提示您。不利用任何漏洞。
-    </div>
-
-    <!--[if lt IE 9]>
-		您的浏览器内核过老!无法正常浏览！！！ 请使用最新的 Edge 浏览器或是 Chrome 浏览器，或者尝试升级你的 Webview
-	<![endif]-->
-
-    <!-- 浏览器兼容模块完毕 -->
-
-
-
-    <!-- 
-	
-		天气模块
-		css: ./css/天气模块.css
-		js: ./js/天气模块.js
-	 
-	 -->
-    <div class="weatherblock">
-        <div class="weatherbody">
-            <img id="weathericon" height="100%" src="" alt="获得天气信息中">
-            <div id="wtgetwtype"></div>
-            <div id="wtgetwendu"></div>
+    <div class="UI" style="color: white;">
+        <div class="topBar">
+            <div class="topBarBeforeBox" style="width: 60px;"><a id="time"></a><a id="time-s"></a></a></div>
+            <div style="display: flex;"><img height="100%" style="transform: scale(1.2)translate(0,1px);"
+                    id="weathericon"><a id="wtgetwtype"></a> <a id="wtgetwendu"></a></a></div>
         </div>
-    </div>
-    <div style="display: none;" id="wtcode"></div>
-    <!-- 
-	
-		闲聊模块
-		css: ./css/闲聊模块.css
-		js: ./js/闲聊模块.js
-	 
-	 -->
-    <div class="ad">
-        <div class="adicon">
-            <img onclick="reget()" id="linkid" height="100%" src="https://pic.liesio.com/2021/08/15/23cf540f70d22.png"
-                alt="推广">
-        </div>
-        <div onclick="adcl()" class="adnr">
-            <div class="adnra" id="adnra">
+
+        <div onkeydown="kydoneTopTitle();" class="topTitle" style="margin:50px 0 30px 40px;font-size:48px"
+            contenteditable="true"></div>
+        <input autocomplete="off" onkeydown="kydone(event);" id="input" value="" class="searchInput" type="text">
+        <div class="scb">
+            <div class="srselcbox" id="bing" onclick="asrc('bing');"><img class="srselcimg"
+                    src="../image/ico-bing-128.png"></div>
+
+            <div class="srselcbox" id="quark" onclick="asrc('quark');"><img class="srselcimg"
+                    src="../image/ico-quark-128.png">
+            </div>
+            <div class="srselcbox" id="taobao" onclick="asrc('taobao');"><img class="srselcimg"
+                    src="../image/ico-taobao-128.png">
+            </div>
+            <div class="srselcbox" id="bilibili" onclick="asrc('bilibili');"><img class="srselcimg"
+                    src="../image/ico-bili-128.png">
             </div>
         </div>
-    </div>
+        <a style="display: none;" class="GuLiText" id="libJS_guLiGet"></a>
+        <script src="./js/plugins.js"></script>
+        <script src="./js/main.js"></script>
+        <div id="cssbox">
 
-    <!--
-	
-		主体模块
-		css: ./css/主体模块.css
-		js: ./js/主体模块.js
-	 
-	 -->
-    <div class="bg1"></div>
-    <div class="bg2"></div>
-    <div class="fsb">.</div>
-    <div class="cs">
-        <div class="timebox">
-            <div class="time" id="time"></div>
-            <div id="time-s" class="time-s">:00</div>
         </div>
-        <div class="search-box">
-            <input autocomplete="off" value="" onkeydown="kydone(event);" id="search" placeholder="输入内容后回车......">
-            <div class="srselc">
-                <div class="srselcbox" onclick="asrc('taobao');"><img class="srselcimg"
-                        src="../image/ico-taobao-32.png"></div>
-                <div class="srselcbox" onclick="asrc('quark');"><img class="srselcimg"
-                        src="../image/ico-quark-32.png"></div>
-                <div class="srselcbox" onclick="asrc('bing');"><img class="srselcimg"
-                        src="../image/ico-bing-32.png"></div>
-                <div class="srselcbox" onclick="asrc('bilibili');"><img class="srselcimg"
-                        src="../image/ico-bili-32.png"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="mb-search-box">
-        <input autocomplete="off" value="" onkeydown="kydonemb(event);" id="searchmb" placeholder="">
-    </div>
 </body>
 
 </html>

@@ -156,10 +156,10 @@ function kydone(e) {
         /^(?=^.{3,255}$)(http(s)?:\/\/)?(www\.)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+(:\d+)*(\/\w+\.\w+)*$/;
 		var reg3 =
         /^(?=^.{3,255}$)(http(s)?:\/\/)?(www\.)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+(:\d+)*(\/\w+\.\w+)*([\?&]\w+=\w*)*$/;
-        if (!reg.test(inps)||!reg2.test(inps||!reg3.test(inps))) {
-			window.open(searchLinkBefore + inps + searchLinkAfter);
+        if (reg.test(inps)||reg2.test(inps||reg3.test(inps))) {
+            window.open(inps);
 		} else {
-			window.open(inps);
+			window.open(searchLinkBefore + inps + searchLinkAfter);
 		}
 	}
 }

@@ -252,6 +252,7 @@ a:-webkit-any-link {
     padding: 10px;
     border-radius: 12px;
     width: fit-content;
+    max-width: calc(100% - 60px);
     transition: all 0.2s cubic-bezier(0.000, 0.4, 0.5, 1);
 }
 

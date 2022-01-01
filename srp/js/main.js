@@ -163,10 +163,11 @@ function kydone(e) {
 		} else {
 			window.open(searchLinkBefore + inps + searchLinkAfter);
 		}
+        setTimeout(() => {
+            document.getElementById('input').innerHTML = document.getElementById('input').innerText;
+        }, 1);
 	}
-    setTimeout(() => {
-        document.getElementById('input').innerHTML = document.getElementById('input').innerText;
-    }, 1);
+
 }
 function kydoneTopTitle() {
     setTimeout(() => {

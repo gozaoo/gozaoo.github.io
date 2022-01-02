@@ -5,7 +5,7 @@ window.onload = function () {
         var Fl = localStorage.getItem('FirstLoad');
         FunAlert('欢迎使用好用起始页','这是您第一次打开此站点，在使用首次使用此站点前我门需要您了解一些事情。<br><br>服务： 提供快捷搜索服务，实时天气服务，随机语句<br><br>特色：无广告，快速，方便<br><br>在此之前我们需要向您获取一些权限：<br>1.位置权限<br>用处：获取您的位置，用于请求您当前位置的天气信息，不会向任何储存任何位置信息到服务器上<br>方法：同意浏览器跳出的弹窗<br><br>感谢: 必应每日壁纸、杨尚臻必应壁纸解析、https://limestart.cn/（毛若昕、杨尚臻）灵感给予。一言、和风天气、github<br><br><br><br>作者：Doge<br>2021/12/26<br><br><br><button onclick="chushi();">我了解啦！点我即可正常使用！！</button>','wz')
         if(Fl){
-            document.getElementById('wz').style.display = none
+            document.getElementById('wz').style.display = 'none'
         } else {
             FunAlert('欢迎使用好用起始页','这是您第一次打开此站点，在使用首次使用此站点前我门需要您了解一些事情。<br><br>服务： 提供快捷搜索服务，实时天气服务，随机语句<br><br>特色：无广告，快速，方便<br><br>在此之前我们需要向您获取一些权限：<br>1.位置权限<br>用处：获取您的位置，用于请求您当前位置的天气信息，不会向任何储存任何位置信息到服务器上<br>方法：同意浏览器跳出的弹窗<br><br>感谢: 必应每日壁纸、杨尚臻必应壁纸解析、https://limestart.cn/（毛若昕、杨尚臻）灵感给予。一言、和风天气、github<br><br><br><br>作者：Doge<br>2021/12/26<br><br><br><button onclick="chushi();">我了解啦！点我即可正常使用！！</button>','wz')
             

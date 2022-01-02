@@ -199,7 +199,7 @@ function setBackDorp(name,css,url) {
 function imageBackDrop(url) {
 return 'body{background: url('+url+') no-repeat center center fixed;background-size:cover;}'
 }
-isSettingDisplay =true
+isSettingDisplay = false
 function settingDisplay(){
     if (isSettingDisplay) {
         document.getElementById('setting').style.display = 'none'
@@ -209,4 +209,3 @@ function settingDisplay(){
         isSettingDisplay =true
     }
 }
-settingDisplay()

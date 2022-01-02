@@ -79,7 +79,7 @@ window.navigator.geolocation.getCurrentPosition(function (p) {
     .then(response => response.json())
     .then(data => {
         document.getElementById("wtgetwendu").innerHTML = data.now.temp + '°'
-        var iconurl = "https://a.hecdn.net/img/common/icon/202106d/" + data.now.icon + ".png"
+        var iconurl = "https://gozaoo.github.io/image/weather/64/" + data.now.icon + ".png"
         console.log('温度：' + data.now.temp + '°' + '\n天气类型:' + data.now.text + '\n体感温度：' + data.now.feelsLike)
         console.log('APIURL结果测试:' + weatherApiLink)
         console.log('图片URL结果测试:' + iconurl)

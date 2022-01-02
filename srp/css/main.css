@@ -331,12 +331,13 @@ a:-webkit-any-link {
     box-shadow: rgba(0, 0, 0, .05) 0 10px 20px;
     border-radius: 12px;width: 162px;height:91.125px;
     overflow: hidden;
+    padding: 10px 0 0 0;
 }
 .backdropButtom:hover{
     outline-color: rgba(0, 0, 0, 0.8);
 }
 .backdropButtom:hover .backdropButtomText{
-    margin: 65.125px 0 0 0;
+    margin: 55.125px 0 0 0;
 }
 
 .backdropButtomText{

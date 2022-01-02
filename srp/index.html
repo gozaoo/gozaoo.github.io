@@ -19,26 +19,57 @@
             <div style="display: flex;"><img alt="天气图片" height="100%" style="transform: scale(1.2)translate(0,1px);"
                     id="weathericon"><a id="wtgetwtype"></a> <a id="wtgetwendu"></a></a></div>
         </div>
-
-        <div onkeydown="kydoneTopTitle(event);" class="topTitle" style=""
-            contenteditable="true"></div>
-        <div contenteditable="true" aria-label="这是一个搜索框。选择后，输入内容，接着回车即可使用相应的搜索引擎进行搜索" autocomplete="off" onkeydown="kydone(event);" id="input" class="searchInput" type="text"></div>
+        <div id="setting" class="alertBox" id="" style="color: #000;">
+            <h1 style="font-size:22px;">设置</h1>
+            <div class="alertBoxText">
+                <div class="alertBoxTextBox">
+                    <h1>背景设置</h1>
+                    <div
+                        style="display: flex;flex-direction:row;justify-content : flex-start;align-items: flex-start;gap: 25px;flex-wrap: wrap;">
+                        <div
+                            onclick="setBackDorp('normal')" class="backdropButtom" style="background-color: #96e6a1;background-image:radial-gradient(closest-side, #84fab0, rgba(235, 105, 78, 0)),radial-gradient(closest-side, #4facfe, rgba(243, 11, 164, 0)),radial-gradient(closest-side, #96e6a1, rgba(254, 234, 131, 0)),radial-gradient(closest-side, #8fd3f4, rgba(170, 142, 245, 0)),radial-gradient(closest-side, #a6c0fe, rgba(248, 192, 147, 0));background-size:130vmax 130vmax,80vmax 80vmax,90vmax 90vmax,110vmax 110vmax,90vmax 90vmax;background-position:-80vmax -80vmax,60vmax -30vmax,10vmax 10vmax,-30vmax -10vmax,50vmax 50vmax;background-repeat: no-repeat;animation: 10s movement linear infinite;background-size:cover;">
+                        <div class="backdropButtomText">灵动青春</div>
+                        </div>
+                        <div
+                        onclick="setBackDorp('bing4k')" class="backdropButtom" style="background: url(https://retiehe.com/backend/bing/1080p) no-repeat center center;background-size:cover;">
+                            <div class="backdropButtomText">4k必应每日壁纸</div>
+                        </div>
+                        <div
+                        onclick="setBackDorp('bing1080p')"class="backdropButtom" style="background: url(https://retiehe.com/backend/bing/1080p) no-repeat center center;background-size:cover;"">
+                            <div class="backdropButtomText">1080P必应每日壁纸</div>
+                        </div>
+                        <div
+                        onclick="setBackDorp('','','/image/小海豹.jpg')"class="backdropButtom" style="background: url(/image/小海豹.jpg) no-repeat center center;background-size:cover;"">
+                            <div class="backdropButtomText">睡觉的小海豹</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div onkeydown="kydoneTopTitle(event);" class="topTitle" style="" contenteditable="true"></div>
+        <div contenteditable="true" aria-label="这是一个搜索框。选择后，输入内容，接着回车即可使用相应的搜索引擎进行搜索" autocomplete="off"
+            onkeydown="kydone(event);" id="input" class="searchInput" type="text"></div>
         <div class="scb">
-            <div class="srselcbox" id="bing" onclick="asrc('bing');"><img class="srselcimg"
-                   alt="选择使用必应搜索引擎" src="../image/ico-bing-128.png"></div>
+            <div class="srselcbox" id="bing" onclick="asrc('bing');"><img class="srselcimg" alt="选择使用必应搜索引擎"
+                    src="../image/ico-bing-128.png"></div>
 
-            <div class="srselcbox" id="quark" onclick="asrc('quark');"><img class="srselcimg"
-                   alt="选择使用quark搜索引擎" src="../image/ico-quark-128.png">
+            <div class="srselcbox" id="quark" onclick="asrc('quark');"><img class="srselcimg" alt="选择使用quark搜索引擎"
+                    src="../image/ico-quark-128.png">
             </div>
-            <div class="srselcbox" id="taobao" onclick="asrc('taobao');"><img class="srselcimg"
-                   alt="选择使用淘宝搜索引擎" src="../image/ico-taobao-128.png">
+            <div class="srselcbox" id="taobao" onclick="asrc('taobao');"><img class="srselcimg" alt="选择使用淘宝搜索引擎"
+                    src="../image/ico-taobao-128.png">
             </div>
-            <div class="srselcbox" id="bilibili" onclick="asrc('bilibili');"><img class="srselcimg"
-                   alt="选择使用B站搜索引擎" src="../image/ico-bili-128.png">
+            <div class="srselcbox" id="bilibili" onclick="asrc('bilibili');"><img class="srselcimg" alt="选择使用B站搜索引擎"
+                    src="../image/ico-bili-128.png">
             </div>
         </div>
         <a style="display: none;" class="GuLiText" id="libJS_guLiGet"></a>
+        <div onclick="settingDisplay()" class="buttom whiteBackdorp BlurBackdorp"
+            style="position: fixed;height: 40px;width: 40px;padding: 8px;border-radius: 12px;top: calc(100% - 64px);left: calc(100% - 64px);">
+            <img style="height: 100%;" src="/image/设置.png" alt="设置"></div>
+        <div id="cssBox" style="display: none;">
 
+        </div>
         <div class="shuming">HaoYo Start Made by Doge | Mail: 2261129603@qq.com | gozaoo.github.io</div>
         <script src="./js/plugins.js"></script>
         <script src="./js/main.js"></script>

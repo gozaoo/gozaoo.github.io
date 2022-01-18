@@ -1,0 +1,160 @@
+.staffListFlexBox {
+    background: none;
+    flex-wrap: wrap;
+    display: flex;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 600px;
+    gap: 0;
+    height: fit-content;
+    
+}
+
+.staffListCard {
+    width: 100%;
+    max-width: 500px;
+    background-color: rgba(230, 230, 255, 0.2);
+    border-radius: 0px;
+    overflow: hidden;
+    margin: 0 7px;
+    height: 72px;
+    background: url(./image/g2nnyS.png) no-repeat center center;
+    background-size: cover;
+    transition: all 0.1s cubic-bezier(0.30, 0.50, 0.25, 0.90);
+}
+
+.staffListCard:hover {
+    transform: scale(1.02);
+}
+
+.staffListFlexBox::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 12px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 8px;
+    border-radius: 0x;
+}
+
+.staffListFlexBox::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.staffListFlexBox::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    border-radius: 0px;
+}
+
+.staffListCardImageBox {
+    width: 80px;
+
+    height: 80px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.staffListCard_title {
+    display: flex;
+    gap: 5px;
+    font-size: 16px;
+    line-height: 32px;
+    padding: 20px 20px 20px 20px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-family: 'Bahnschrift', '微软雅黑 light', 'Arial';
+
+}
+.PayListCard_title {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    font-size: 16px;
+    padding: 5px 20px 5px 20px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-family: 'Bahnschrift', '微软雅黑 light', 'Arial';
+}
+.PayListCard_title div{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
+}
+.staffListCard_title img{
+    height: 32px;
+    width: 32px;
+}
+
+.staffListCard-black .staffListCard_title {
+    background-image: linear-gradient(rgba(255, 255, 255, .02), rgba(255, 255, 255, 0.5));
+}
+
+.staffListCard-black .staffListCard_title a {
+    color: rgb(0, 0, 0);
+
+}
+
+.staffListCard-white .staffListCard_title {
+    background-image: linear-gradient(to right,rgba(255,255,255, .8), rgba(255,255,255, .5),rgba(0255,255,255, 0.5));
+}
+
+.staffListCard-white .staffListCard_title a {
+    color: rgb(0, 0, 0);
+
+}
+
+.staffListCard_title * {
+    display: inline-block;
+}
+
+:root {
+    /* 定义RGB变量 */
+    --red: 255;
+    --green: 255;
+    --blue: 255;
+    /* 文字颜色变色的临界值，建议0.5~0.6 */
+    --threshold: 0.5;
+}
+
+.staffListCard_title div {
+    --r: calc(var(--red) * 0.2126);
+    --g: calc(var(--green) * 0.7152);
+    --b: calc(var(--blue) * 0.0722);
+    --sum: calc(var(--r) + var(--g) + var(--b));
+    --lightness: calc(var(--sum) / 255);
+    color: hsl(0, 0%, calc((var(--lightness) - var(--threshold)) * -999999%));
+    ;
+    display: inline-block;
+    background: rgb(var(--red), var(--green), var(--blue));
+    padding: 0px 8px;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.teamRightBox{
+    display: grid;
+}
+.teamRightBox>div{
+    height: 360px;
+}
+.teamRightBox>div:hover{
+    
+    background: rgba(230,230,255,.2);
+}
+
+.RightBoxflexBox{
+    padding: 0px 10px 0 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}.RightBoxflexBox>div{
+    height: 130px;
+    user-select: none;
+}
+.RightBoxflexBox>div>img:hover{
+    transform: scale(1.25);
+}
+.RightBoxflexBox>div>img{
+}

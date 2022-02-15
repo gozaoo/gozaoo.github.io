@@ -21,7 +21,7 @@ function chushi() {
     localStorage.setItem('FirstLoad', true);
     localStorage.setItem('yinqin', 'bing');
     localStorage.setItem('topTitleIndex', '点我可以自定义修改标题哦~~~');
-    localStorage.setItem('backDorpCss', 'body{background-color: #96e6a1;background-image:radial-gradient(closest-side, #84fab0, rgba(235, 105, 78, 0)),radial-gradient(closest-side, #4facfe, rgba(243, 11, 164, 0)),radial-gradient(closest-side, #96e6a1, rgba(254, 234, 131, 0)),radial-gradient(closest-side, #8fd3f4, rgba(170, 142, 245, 0)),radial-gradient(closest-side, #a6c0fe, rgba(248, 192, 147, 0));background-size:130vmax 130vmax,80vmax 80vmax,90vmax 90vmax,110vmax 110vmax,90vmax 90vmax;background-position:-80vmax -80vmax,60vmax -30vmax,10vmax 10vmax,-30vmax -10vmax,50vmax 50vmax;background-repeat: no-repeat;animation: 10s movement linear infinite;}');
+    localStorage.setItem('backDorpCss', ['','css']);
     asrc()
     {
         checkStorageSupport()
@@ -44,8 +44,20 @@ function chushi() {
 function loop() {
     bodyTime()
     var BackDorp = localStorage.getItem('backDorpCss')
-    document.getElementById('cssBox').innerHTML = '<style>' + BackDorp + '</style>'
-    setTimeout('loop() ', 50)
+    if (BackDorp[1] == 'css'){
+        document.getElementById('cssBox').innerHTML = '<style>' + BackDorp[0] + '</style>'
+        document.getElementById('bgimg').src = ''
+    } else if(BackDorp[1] == 'img') {
+        document.getElementById('bgimg').src = BackDorp[0]
+        document.getElementById('bgimg').addEventListener('loadeddata', function () {
+ 
+            if (audio.readyState >= 2) {
+                document.getElementById('bgimg').style.display = 'block'
+            }
+    
+          });
+    }
+        setTimeout('loop() ', 50)
 }
 
 
@@ -180,20 +192,20 @@ function kydoneTopTitle() {
 function setBackDorp(name,css,url) {
     switch (name) {
         case 'normal':
-            localStorage.setItem('backDorpCss', 'body{background-color: #96e6a1;background-image:radial-gradient(closest-side, #84fab0, rgba(235, 105, 78, 0)),radial-gradient(closest-side, #4facfe, rgba(243, 11, 164, 0)),radial-gradient(closest-side, #96e6a1, rgba(254, 234, 131, 0)),radial-gradient(closest-side, #8fd3f4, rgba(170, 142, 245, 0)),radial-gradient(closest-side, #a6c0fe, rgba(248, 192, 147, 0));background-size:130vmax 130vmax,80vmax 80vmax,90vmax 90vmax,110vmax 110vmax,90vmax 90vmax;background-position:-80vmax -80vmax,60vmax -30vmax,10vmax 10vmax,-30vmax -10vmax,50vmax 50vmax;background-repeat: no-repeat;animation: 10s movement linear infinite;}');
+            localStorage.setItem('backDorpCss', ['body{background-color: #96e6a1;background-image:radial-gradient(closest-side, #84fab0, rgba(235, 105, 78, 0)),radial-gradient(closest-side, #4facfe, rgba(243, 11, 164, 0)),radial-gradient(closest-side, #96e6a1, rgba(254, 234, 131, 0)),radial-gradient(closest-side, #8fd3f4, rgba(170, 142, 245, 0)),radial-gradient(closest-side, #a6c0fe, rgba(248, 192, 147, 0));background-size:130vmax 130vmax,80vmax 80vmax,90vmax 90vmax,110vmax 110vmax,90vmax 90vmax;background-position:-80vmax -80vmax,60vmax -30vmax,10vmax 10vmax,-30vmax -10vmax,50vmax 50vmax;background-repeat: no-repeat;animation: 10s movement linear infinite;}','css']);
             break;
         case 'bing1080p':
-            localStorage.setItem('backDorpCss', imageBackDrop('https://retiehe.com/backend/bing/1080p'));
+            localStorage.setItem('backDorpCss', [imageBackDrop('https://retiehe.com/backend/bing/1080p'),'url'],imageBackDrop(url));
             break;
         case 'bing4k':
-            localStorage.setItem('backDorpCss', imageBackDrop('https://retiehe.com/backend/bing/4k'));
+            localStorage.setItem('backDorpCss', [imageBackDrop('https://retiehe.com/backend/bing/4k'),'url'],imageBackDrop(url));
             break;
     }
     if (css != undefined){
-        localStorage.setItem('backDorpCss', 'body{'+css+'}')
+        localStorage.setItem('backDorpCss', ['body{'+css+'}','css'])
     }
     if (url != undefined) {
-        localStorage.setItem("backDorpCss",imageBackDrop(url))
+        localStorage.setItem("backDorpCss",[imageBackDrop(url),'url'],imageBackDrop(url))
     }
 }
 function imageBackDrop(url) {
@@ -209,3 +221,4 @@ function settingDisplay(){
         isSettingDisplay =true
     }
 }
+

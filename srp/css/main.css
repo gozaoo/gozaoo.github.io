@@ -37,6 +37,10 @@ body {
     margin: 0;
     min-height: 100vh;
 }
+#bgimg{
+    position: fixed;
+    z-index: -2;
+}
 
 .blurbg {
     position: fixed;
@@ -242,6 +246,7 @@ a:-webkit-any-link {
     color: #fff;
     gap: 18px;
     line-height: 32px;
+    backdrop-filter: blur(8px);
 }
 
 .topBarBeforeBox {
@@ -251,6 +256,15 @@ a:-webkit-any-link {
 .GuLiText {
     color: white;
     text-align: right;
+    color: white;
+    text-align: center;
+    background-color: rgba(100%,100%,100%,50%);
+    position: absolute;
+    width: 100%;
+    backdrop-filter: blur(5vw);
+    font-size: 24px;
+    padding: 40px 0px;
+    margin-top: 8vh;
 }
 
 .topTitle {
@@ -267,7 +281,8 @@ a:-webkit-any-link {
 .searchInput {
     margin: 0px 0 40px 30px;
     font-size: 25px;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5vw);
     border: none;
     color: #000;
     width: 580px;

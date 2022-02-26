@@ -158,12 +158,12 @@ body:hover .text-Bar{
 .guShiIframe {
     border-radius: 15px;
     background-color: #fff;
-    width: 280px;
-    height: 400px;
+    width: 320px;
+    height: 440px;
     outline: none;
     border: 0px;
     position: fixed;
-    transform: translate(-100%,-100%);
+    transform: translate(-90%,-90%) scale(0.8);
     animation: spawn 0.5s cubic-bezier(.1,.65,.4,1.25);
 }
 @keyframes spawn {
@@ -174,8 +174,8 @@ body:hover .text-Bar{
     }
 
     100% {
-        width: 280px;
-        height: 400px;
+        width: 320px;
+        height: 440px;
         opacity: 1;
     }
 }

@@ -122,9 +122,11 @@ body>#inputBox>#input:focus {
     left: 50%;
     transform: translate(-50%, 0);
 }
-body:hover .text-Bar{
+
+body:hover .text-Bar {
     opacity: 1;
 }
+
 .text-Bar {
     height: 70px;
     position: fixed;
@@ -140,7 +142,7 @@ body:hover .text-Bar{
 
 #yiYanBox {
     cursor: pointer;
-    
+
     user-select: none;
 }
 
@@ -158,25 +160,34 @@ body:hover .text-Bar{
 .guShiIframe {
     border-radius: 15px;
     background-color: #fff;
-    width: 320px;
-    height: 440px;
+    width: 360px;
+    height: 520px;
     outline: none;
     border: 0px;
     position: fixed;
-    transform: translate(-90%,-90%) scale(0.8);
-    animation: spawn 0.5s cubic-bezier(.1,.65,.4,1.25);
+    transform: translate(-92%, -92%) scale(0.85);
+    animation: spawn 0.8s cubic-bezier(.1, .65, .4, 1.25);
 }
+
 @keyframes spawn {
     0% {
         opacity: 0.2;
         width: 0px;
-        height:0px;
+        height: 0px;
+        border-radius: 11px;
+        transform: translate(-92%, -92%) scale(0.85);
+    }
+
+    80%{
+        width: 360px;
+        height: 520px;
+        opacity: 1;
+        border-radius: 15px;
+        transform: translate(-95%, -95%) scale(0.85);
     }
 
     100% {
-        width: 320px;
-        height: 440px;
-        opacity: 1;
+        transform: translate(-93%, -93%) scale(0.85);
     }
 }
 
@@ -186,7 +197,126 @@ body:hover .text-Bar{
     padding: 0 0px;
     transition: all 0.5s cubic-bezier(0.30, 0.50, 0.25, 0.90);
 }
+
 ::-webkit-scrollbar-thumb {
     border-radius: 0px;
-    background: rgba(255,255,255,0.45);
+    background: rgba(255, 255, 255, 0.45);
+}
+
+.infoBar,
+.infoBar>div {
+    height: 32px;
+    display: flex;
+    text-align: center;
+    line-height: 32px;
+    color: white;
+    max-height: 32px;
+    user-select: none;
+}
+
+#weatherBox {
+    padding: 0 10px;
+    border-radius: 11px;
+    cursor: pointer;
+}
+
+#weatherBox:hover {
+
+    background-color: #ffffff10;
+}
+
+#weatherBoxBiggerInfo {
+    border-radius: 15px;
+    background-color: #fff;
+    width: 220px;
+    height: 280px;
+    padding: 8px 12px;
+    text-align: left;
+    overflow: hidden;
+    color: #000;
+    outline: none;
+    border: 0px;
+    position: absolute;
+    transform: translate(-10px, calc(-100% - 10px));
+    animation: wdspawn 0.8s cubic-bezier(.1, .65, .4, 1.25);
+}
+
+.wbbiTopBox {
+    display: flex;
+    height: 96px;
+}
+
+#wbbiType {
+    margin-top: 1em;
+    line-height: 1.1em;
+    margin-bottom: 0px;
+    margin-left: 0.3em;
+}
+
+#wbbiTemp {
+    margin-top: 0;
+    line-height: 1.1em;
+    font-size: 43px;
+    margin-bottom: 0px;
+}
+
+.wbbiMiniBar {
+    height: 24px;
+    display: flex;
+    gap: 10px;
+    color: #999999;
+}
+.wbbiMiniBar div{
+    line-height: 24px;
+    font-size: 14px;
+    height: 24px;
+    display: flex;
+}
+@keyframes wdspawn {
+    0% {
+        opacity: 0.2;
+        width: 0px;
+        height: 0px;
+        border-radius: 11px;
+        transform: translate(-8px, calc(-100% - 8px));
+    }
+    50%{
+        transform: translate(0px, calc(-100% - 20px));
+    }
+    80%{
+        width: 220px;
+        height: 280px;
+        opacity: 1;
+        border-radius: 15px;
+    }
+    100% {
+        transform: translate(-10px, calc(-100% - 10px));
+    }
+}
+#weatherBoxBiggerInfo > div.wbbiotherDay {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    min-height: 120px;
+    max-height: 120px;
+    min-width: 220px;
+    max-width: 220px;
+    font-size: small;
+    color: rgb(65, 65, 65);
+    text-align: center;
+}
+
+div.wbbiotherDay > div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+
+}
+div.wbbiotherDay > div > img{
+    max-width: 50px;
+    position: absolute;
+    transform: translate(0, 15px);
+}
+div.wbbiotherDay > div > a{
+    height: 60px;
 }

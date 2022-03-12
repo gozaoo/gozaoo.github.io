@@ -4,6 +4,8 @@ var geoID, nowTimeWeatherCache, threeDayWeatherCache
 window.onload = function () {
 	bodyTime()
 	hitokoto()
+	document.querySelector('.bg-image').style.opacity = '1'
+	document.querySelector('.bg-image').style.transform = 'scale(1.2)'
 }
 
 function bodyTime() {
@@ -35,12 +37,12 @@ function hitokoto() {
 		document.getElementById('yiYan-text').innerText = r.hitokoto
 		document.getElementById('yiYan-fw').innerText = '《' + r.from + '》 -' + r.from_who
 
-		document.getElementById('yiYanBox').addEventListener('click', (th, ev) => {
+		/**document.getElementById('yiYanBox').addEventListener('click', (th, ev) => {
 			hitokotoInfo(r.from, {
 				height: th.clientY,
 				width: th.clientX
 			})
-		})
+		})*/
 	})
 }
 
@@ -63,7 +65,7 @@ function search(value) {
 	}
 	let urlReg = /(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\*\+,;=.]/
 	if (urlReg.test(newV)) {
-		location.href = newV
+		window.open(newV)
 	} else {
 		location.href = "https://cn.bing.com/search?q=" + newV
 	}
@@ -111,7 +113,7 @@ function navGeo() {
 			}
 			geoID = JSON.parse(window.localStorage.getItem('geoID'))
 			let cacheGeo = JSON.parse(window.localStorage.getItem('geoWZ'))
-			if (cacheGeo.jd != Geo.jd) {
+			if ( cacheGeo == undefined ||cacheGeo.jd != Geo.jd) {
 				geoEvent()
 			}
 			qweatherWeather()
@@ -155,23 +157,36 @@ function resetGeoID(text) {
 }
 
 function qweatherWeather() {
-	fetch('https://devapi.qweather.com/v7/weather/now?location=' + geoID.id + '&key=6481d49774104e088a6a5a73399162d5')
-		.then(r => r.json())
-		.then(r => {
-			nowTimeWeatherCache = r.now
+
+    fetch('https://devapi.qweather.com/v7/weather/now?location=' + geoID.id +
+            '&key=6481d49774104e088a6a5a73399162d5')
+        .then(r => r.json())
+        .then(r => {
+            nowTimeWeatherCache = r.now
 			document.getElementById('wbbiIcon').src = 'https://gozaoo.github.io/image/weather/256/' + nowTimeWeatherCache.icon + '.png'
 			document.getElementById('wbbiType').innerText = nowTimeWeatherCache.text
-			document.getElementById('wbbiSD').innerText = nowTimeWeatherCache.humidity + '%'
-			document.getElementById('wbbiTemp').innerText = nowTimeWeatherCache.temp + '°'
+            document.getElementById('wbbiTemp').innerText = nowTimeWeatherCache.temp + '°';
+
 			document.getElementById('weatherIcon').src = 'https://gozaoo.github.io/image/weather/256/' + nowTimeWeatherCache.icon + '.png'
 			document.getElementById('weatherDu').innerText = nowTimeWeatherCache.temp + '°'
-		})
-	fetch('https://devapi.qweather.com/v7/weather/3d?location=' + geoID.id + '&key=6481d49774104e088a6a5a73399162d5')
-		.then(r => r.json())
-		.then(r => {
-			threeDayWeatherCache = r.daily
-			console.log();
-		})
-
-
+        })
+    fetch('https://devapi.qweather.com/v7/weather/3d?location=' + geoID.id +
+            '&key=6481d49774104e088a6a5a73399162d5')
+        .then(r => r.json())
+        .then(r => {
+            threeDayWeatherCache = r.daily
+            console.log(threeDayWeatherCache);
+            var Ids= ['wbbiToday','wbbiTm','wbbiAf']
+            for (const num in Ids) {
+                let elm = document.getElementById(Ids[num])
+                let content = "";
+                content += '&nbsp&nbsp<img height="100%" src="https://gozaoo.github.io/image/weather/256/'+threeDayWeatherCache[num].iconDay+'.png"></img><a>'+ threeDayWeatherCache[num].textDay+' ' + threeDayWeatherCache[num].tempMax +'°</a>' 
+                content += '&nbsp=>&nbsp<a>'+ threeDayWeatherCache[num].textNight+' ' + threeDayWeatherCache[num].tempMin +'°</a>' 
+                
+                elm.innerHTML = content;
+            }   
+        })
+    setTimeout(() => {
+        qweatherWeather()
+    }, 1200000);
 }

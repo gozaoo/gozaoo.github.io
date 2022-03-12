@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>新建标签页</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lib.css">
 </head>
 
 <body>
@@ -24,28 +25,29 @@
         </div>
         <div class="infoBar">
             <div id="weatherBox">
-                <div id="weatherBoxBiggerInfo" style="display: none;">
+                <div id="weatherBoxBiggerInfo" style="display: block;">
                     <div>天气</div>
                     <div class="wbbiTopBox">
                         <img id="wbbiIcon" height="100%" src="" alt="" srcset="">
                         <div>
                             <div id="wbbiType"></div>
                             <div id="wbbiTemp"></div>
-
+                            
                         </div>
                     </div>
-                    <div class="wbbiMiniBar">
-                        <div>
-                            <img src="./rain.png" height="100%" alt="" srcset="">
-                            <a id="wbbiSD"></a>
-                        </div>
-                    </div>
+                    <HR align=center color="#666" SIZE=1/>
                     <div class="wbbiotherDay">
                         <div>
                             <a>今天</a>
-                            <img src="https://gozaoo.github.io/image/weather/256/305.png" width="100%"></div>
-                        <div><a>明天</a></div>
-                        <div><a>后天</a></div>
+                            <a id="wbbiToday">
+                                <img src="" alt="">
+                            </a>
+                        </div>
+        
+                        <div><a>明天</a>
+                            <a id="wbbiTm"></a></div>
+                        <div><a>后天</a>
+                            <a id="wbbiAf"></a></div>
                     </div>
                 </div>
                 <img id="weatherIcon" height="100%" src="" alt="" srcset="">
@@ -53,6 +55,8 @@
             </div>
         </div>
     </div>
+  <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    
     <script src="main.js"></script>
 </body>
 

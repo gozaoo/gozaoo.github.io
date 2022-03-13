@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .class1 {
+      background: #444;
+      color: #eee;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <h1>DogeDoge 工作区</h1>
+    <div>
+      <h2>v-once使用方法</h2>
+      <div>当前计数： {{ counter }}</div>
+      <div v-once>标签内含有v-once： {{ counter }};这个地方只会赋值一次，如果数值再次发生改变，此div不会有任何变化</div>
+      <button v-on:click="add">+</button>
+      <button v-on:click="sub">-</button>
+    </div>
+    <hr>
+    <div>
+      <h2>v-bind使用方法 && 使用占位符来使用 JavaScript 表达式</h2>
+      <div v-bind:style="'font-size:' + counter + 'px'">通过绑定b-vind调整字体大小</div>
+      <div>请通过调整下面按钮调整字体大小： {{ counter }}</div>
+      <div>当前被v-bind元素的style内容为: {{'font-size:' + counter + 'px'}} </div>
+      <br>
+      <div>当然，还可以用此来表达算数等等 {{counter}}x8={{counter*8}} </div>
+      <button v-on:click="add">+</button>
+      <button v-on:click="sub">-</button>
+    </div>
+    <hr>
+    <div>
+      <h2>v-if的使用方法</h2>
+      <div>你需要将数值改到8才能看到我 {{ counter }}</div>
+      <button v-on:click="add()">+</button>
+      <button v-on:click="sub()">-</button>
+      <p v-if="counter == 8">现在你看到我了哦</p>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

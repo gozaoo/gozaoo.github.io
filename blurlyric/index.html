@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>BlurLyric | 高颜值的网易云第三方播放器</title>
+		<link rel="shortcut icon" href="./favicon.svg" type="image/x-icon">
+		<style>
+			body{
+				margin: 0;
+				color: rgba(0, 0, 0,.7);
+			}
+				
+			:root{
+				--paddingIndex-MaxWidth: calc(100vw - calc(var(--paddingIndex) + var(--paddingIndex)));
+				--paddingIndex: 12vw;
+				--elm-logolineHeight: 74px;
+				
+			}
+			@media (max-width: 1500px) {
+			  :root {
+			    --paddingIndex: 15vw
+			  }
+			}
+			
+			@media (max-width: 1200px) {
+			  :root {
+			    --paddingIndex: 13vw
+			  }
+			}
+			
+			@media (max-width: 800px) {
+			  :root {
+			    --paddingIndex: 10vw
+			  }
+			}
+			
+			@media (max-width: 600px) {
+			  :root {
+			    --paddingIndex: 6vw;
+			
+			  }
+			}
+			@font-face {
+			  font-family: harmony;
+			  font-display: swap;
+			  src: url(./font/HarmonyOS_Sans_SC_Medium.ttf);
+			}
+			
+			@font-face {
+			  font-family: harmonyLite;
+			  font-display: swap;
+			  src: url(./font/HarmonyOS_Sans_Light.ttf);
+			}
+			@font-face {
+			  font-family: code;
+			  font-display: swap;
+			  src: url(./font/Menlo.ttf);
+			}
+			* {
+			  font-family: harmony;
+			}
+			
+			
+		a:link,a:visited,a:active{
+				text-decoration:underline;
+				color: #5080FF;
+				
+			}
+			.acrylicEffect {
+			  backdrop-filter:
+			    /* 负责背景模糊 */
+			    blur(3vw)
+			    /* 负责亮度，100 以下会变暗，以上会提亮 */
+			    brightness(100%)
+			    /* 负责颜色饱和度，可以减小来衬托前景，避免背景太鲜艳 */
+			    saturate(140%);
+			  /* 负责颜色叠加，一半白色、黑色或主题色，衬托前景 */
+			  background-color: #ffffff88;
+			  /* 负责在效果上添加噪点，可以营造出磨砂效果 */
+			  /* 磨砂大小 */
+			  transform: translateZ(0);
+			}
+			.title-Logo{
+				font-family: harmonyLite;
+			}
+			.LogoLine{
+				height: 54px;
+				width: 100%;
+				overflow: hidden;
+				display: flex;
+				align-items: center;
+				font-family: harmonyLite;
+				gap: 10px;
+				position: fixed;
+				padding: 10px var(--paddingIndex);
+				font-size: 2em;
+				z-index: 11;
+			}
+
+			.Box{
+				height: calc(100vh - 40px);
+				overflow: hidden;
+				position: relative;
+				z-index: 1;
+				padding: 20px var(--paddingIndex);
+			}
+			.firstBox{
+				padding-top: 72px;
+				height: calc(100vh - 92px);
+			}
+			.center{
+				justify-content: center;
+				justify-items: center;
+				text-align: center;
+			}
+			.homeAppDisplay{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				z-index: -1;
+				width: 60vw;
+				transform: translate(-50%,0);
+			}
+			.homeAppDisplay>img:nth-child(1){
+				position: absolute;
+				z-index: -1;
+				filter: blur(5vh);
+			}
+				
+			.buttonList{
+				display: flex;
+				justify-content: center;
+				gap: 1em;
+				box-shadow: rgba(0, 0, 0, 0.7);
+				margin: 0 auto;
+				width: fit-content;
+			}
+			.buttonList>button{
+				background-color: rgb(242,242,242);
+				padding: 0.7em;
+				border: none;
+				border-radius: 0.5em;
+				cursor: pointer;
+				transition: 0.2s;
+			}
+			.buttonList>button:hover{
+				transform: scale(1.05);
+			}
+			
+			.buttonList.bigger>button{
+				font-size: 1em
+			}
+			.flex-center-box{
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+			}
+			code{
+				display: block;
+				padding: 20px;
+				max-width: 300px;
+				overflow: hidden;
+				border-radius: 15px;
+				font-size: 14px;
+				color: white;
+				font-family: code;
+				font-weight: 100;
+				word-break: break-all;
+				background-color: #333333;
+			}
+			.secBox-img{
+				display: flex;
+				margin-left: auto;
+				max-width: 40vw;
+				justify-items: right;
+				width: fit-content;
+			}
+			.flexCreater{
+				display: flex;
+				height: fit-content;
+				overflow-y: hidden;
+				overflow-x: auto;
+				gap: 20px;
+				text-align: center;
+			}
+			.flexCreater>div{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			.flexCreater>div>img{
+				height: 100px;
+				border-radius: 50%;
+			}
+			.flexCreater>div>h1{
+				margin: 10px 0 0 0;
+			}
+			.flexCreater>div>h2{
+				margin: 10px 0 0 0;
+				color: rgba(0, 0, 0,.4);
+				font-size: 0.8em;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="LogoLine acrylicEffect">
+			<img src="./favicon.svg" height="100%">
+			BlurLyric
+		</div>
+		<div class="firstBox center Box ">
+			<h1>简单、高颜值的<br>网易云第三方播放器 Blurlyric</h1>
+			<div class="buttonList bigger">
+				<button onclick="window.open('https://web.blurlyric.app/')" style="box-shadow: 0 10px 30px #5080FF55;padding: 0 1.2em;background-color:#5080FF;color:#ffffff">立即体验</button>
+				<button onclick="location.href='#get'">快速使用</button>
+				<button>Github源码</button>
+			</div>
+			<div class="homeAppDisplay" >
+				<img width="100%" src="./img/cut1.png" alt="" srcset="">
+				<img width="100%" src="./img/cut1.png" alt="" srcset="">
+			</div>
+		</div>
+		<div id="get" style="padding-bottom:30px;height:fit-content;background-color: rgb(250,250,250);" class="flex-center-box Box">
+			<div>
+				<h1>快速获取项目</h1>
+				<h2>SETP 1</h2>
+				<p>安装这两个依赖：<a href="http://nodejs.cn/download/current/">nodeJs</a>、<a href="https://git-scm.com/">Git</a></p>
+				<h2>SETP 2</h2>
+				<p>
+					打开命令台（cmd/shell），将下方内容复制进去即可
+				</p>
+				<code>
+					git clone https://github.com/gozaoo/BlurLyric2.0.git<br>
+					cd BlurLyric2.0<br>
+					npm install<br>
+					npm run el:serve
+					
+				</code>
+			</div>
+
+		</div>
+		<div id="creater" class="creater Box">
+			<h1>开发者们</h1>
+			<div class="flexCreater">
+				<div>
+					<img height="100%" src="./img/QQ图片20220707204024.bmp">
+					<h1>Doge</h1>
+					<h2>项目程序部分，前端部分<br>2261129603@qq.com</h2>
+				</div>
+				<div>
+					<img height="100%" src="http://q2.qlogo.cn/headimg_dl?dst_uin=1727803401&spec=100">
+					<h1>咸鸽</h1>
+					<h2>提供服务器，管理<br>master@pafworld.top</h2>
+				</div>
+			</div>
+			<h1 style="margin: 30px 0 20px 0 ;">帮助这个项目</h1>
+			<div style="display: grid;grid-template-columns: repeat(2, 1fr);gap: 3vw;word-break: break-all;">
+				<div><h2  style="margin: 0px 0 0 0 ;" >您可以<a href="https://github.com/gozaoo/BlurLyric2.0/pulls">打开GitHub（https://github.com/gozaoo/BlurLyric2.0/pulls）贡献您的源码</a></h2><p>本项目完全免费，开源，为爱发电！<br>无论是美术，技术，运营，如果您对此项目有兴趣，可以发送到我的邮箱，一起参与BlurLyric的开发</p></div>
+				<div>
+					<h2 style="margin: 0px 0 0 0 ;">赞助我们</h2>
+					<p>
+						您的赞助将用于分担咸鸽运营服务器的开支<a style="text-decoration: line-through">，也有可能被开发者拿来买可乐</a>
+					</p>
+						<button onclick="window.open('https://web.blurlyric.app/')" style="box-shadow: 0 10px 30px #5080FF55;border: none; padding: 0.7em; border-radius: .5em ; background-color:#5080FF ;color:#ffffff">立即打开</button>
+				</div>
+			</div>
+			<hr style="#00000030">
+			<div>BlurLyricIntro Page made with love by Doge <br><a style=" text-align: right; " href="https://pafworld.top/">Projects And Factory Network</a></div>
+		</div>
+	</body>
+</html>

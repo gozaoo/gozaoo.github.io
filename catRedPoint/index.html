@@ -1,0 +1,114 @@
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>给你家的猫猫玩玩吧</title>
+	<style>
+		body{
+			padding: 0;
+			margin: 0;
+			background-color: rgba(255,255,255);
+		}
+		.alerm{
+			display: flex;
+			position: fixed;
+			height: 100%;
+			width: 100%;
+			font-size: 2rem;
+			text-align: center;
+			justify-content: center;
+			align-items: center;
+			animation: xiaoshi 5s 5s;
+			color: rgba(0, 0, 0, .08);
+		}
+		@keyframes xiaoshi {
+			0%{
+				color: rgba(0, 0, 0, 1);
+			}
+			100%{
+				color: rgba(0, 0, 0, .1);
+			}
+		}
+		#redpoint{
+			position: fixed;
+			background-color: red;
+			height: 7vh;
+			width: 7vh;
+			border-radius: 50%;
+			transform: translate(-50%,-50%);
+			transition: 200ms;
+		}
+		#fullScreemButtom,#audioButtom{
+			background-color: rgba(0, 0, 0, .01);
+			position: fixed;
+			top: 0;
+			height: 10vh;
+			width: 10vh;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="alerm">
+		<p>给你家的猫猫玩吧<br>双击右上角全屏<br>双击左上角播放或暂停声效</p>
+	</div>
+	<div id="redpoint"></div>
+	<div style="right: 0;" id="fullScreemButtom"></div>
+	<div id="audioButtom"></div>
+	<script>
+		var bodyHeight,bodyWidth
+		function getWindowSize(){
+			bodyHeight = document.documentElement.clientHeight
+			bodyWidth = document.documentElement.clientWidth
+		}
+		var audio = {
+			play: false,
+			src: './successful_hit.ogg'
+		}
+		window.addEventListener('resize', getWindowSize)
+		getWindowSize()
+		document.getElementById('fullScreemButtom').addEventListener('click',requestFullScreamFunc)
+		function requestFullScreamFunc(){
+			time = new Date()
+			let thisFunctionTime = time
+			setTimeout(()=>{
+				if(thisFunctionTime != time){
+				document.documentElement.requestFullscreen()
+				}
+			},500)
+		}
+		function randomPlace(){
+			document.querySelector('#redpoint').style.top = randomNum(bodyHeight)
+			document.querySelector('#redpoint').style.left = randomNum(bodyWidth)
+			if (audio.play == true) {
+				let audioElm = document.createElement('audio')
+				audioElm.src = audio.src
+				audioElm.play()
+			}
+			setTimeout(()=>{
+				randomPlace()
+			},200)
+		}
+		function randomNum(num){
+			return Math.floor(Math.random() * num)
+		}
+		randomPlace()
+
+		document.getElementById('audioButtom').addEventListener('click',playAudioFunc)
+		function playAudioFunc(){
+			time = new Date()
+			let thisFunctionTime = time
+			setTimeout(()=>{
+				if(thisFunctionTime != time){
+				if( audio.play == false ){
+					 audio.play = true
+				} else {
+					 audio.play = false
+				}
+				}
+			},500)
+		}
+	</script>
+</body>
+</html>

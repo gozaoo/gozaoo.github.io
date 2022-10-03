@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>空</title>
+    <meta name="referrer" content="no-referrer">
     <style>
         .backgroundImage {
             background-color: #4f4f4f;
@@ -156,7 +157,7 @@
                 weather() {
                     var content = "?key=6481d49774104e088a6a5a73399162d5&location=" + this.where
 
-                    fetch('https://devapi.qweather.com/v7/grid-weather/now?' + content).then(r => r.json()).then(r => {
+                    fetch('https://devapi.qweather.com/v7/weather/now' + content).then(r => r.json()).then(r => {
                         this.now = r.now
                     })
                 }

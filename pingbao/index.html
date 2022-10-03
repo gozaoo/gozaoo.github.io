@@ -162,6 +162,10 @@
                     fetch('https://devapi.qweather.com/v7/weather/now' + content).then(r => r.json()).then(r => {
                         this.now = r.now
                     })
+
+                    setTimeout(() => {
+                        
+                    }, 20*60*1000);
                 }
             }
         }).mount('body')

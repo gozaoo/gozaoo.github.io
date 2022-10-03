@@ -54,6 +54,7 @@
 
         .ti-MinuPersent {
             height: 0.05em;
+            transition: width 1.2s linear;
             width: calc(100% * var(--persent));
             background: #ffffff99;
             border-radius: 0.05em;
@@ -70,7 +71,6 @@
         .weather{
             display: flex;
             align-items: center;
-            font: ;
         }
         .weatherIcon{
             height: 2em;
@@ -149,7 +149,7 @@
                     }
 
 
-                    this.minutesPersent = (s * 1000 + date.getTime() - Date.parse(date)) / (60 * 1000)
+                    this.minutesPersent = s / 60
                     return h + ":" + m
 
                     setTimeout(() => {

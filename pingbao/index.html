@@ -156,7 +156,7 @@
                 weather() {
                     var content = "?key=6481d49774104e088a6a5a73399162d5&location=" + this.where
 
-                    fetch('https://devapi.qweather.com/v7/grid-weather/now?' + content).then(r => r.json()).then(r => {
+                    fetch('https://devapi.qweather.com/v7/weather/now' + content).then(r => r.json()).then(r => {
                         this.now = r.now
                     })
                 }

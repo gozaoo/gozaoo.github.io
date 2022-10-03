@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>空</title>
+    <style>
+        .backgroundImage {
+            background-color: #4f4f4f;
+
+            background-image: linear-gradient(#00000000, #00000000, #00000000, #00000080),
+                url(https://www.yangshangzhen.com/bing/wallpaper);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: font;
+        }
+
+        @font-face {
+            font-family: font;
+            src: url(./ass/HarmonyOS_Sans_SC_Regular.ttf);
+        }
+
+        .buttomLabs {
+            position: absolute;
+            display: flex;
+            bottom: 0;
+            font-size: calc(1vh + 1vw * 3);
+            color: white;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 0px 1em 1em 1em;
+            width: calc(100% - 2em);
+        }
+
+        .time {
+            font-size: 3em;
+            position: relative;
+        }
+
+        .ti-MinuPersent {
+            height: 0.05em;
+            width: calc(100% * var(--persent));
+            background: #ffffff99;
+            border-radius: 0.05em;
+            min-width: 0.5em;
+        }
+
+        .ti-MinuPersentBox {
+            position: absolute;
+            padding: 0.02em;
+            background-color: #ffffff20;
+            border-radius: 0.05em;
+            width: 100%;
+        }
+        .weather{
+            display: flex;
+            align-items: center;
+            font: ;
+        }
+        .weatherIcon{
+            height: 2em;
+            aspect-ratio: 1/1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="backgroundImage">
+        <div class="buttomLabs">
+            <div class="time">
+                <div>{{ form1(time) }}</div>
+                <div class="ti-MinuPersentBox">
+                    <div v-bind:style="'--persent:'+ minutesPersent" class="ti-MinuPersent"></div>
+                </div>
+
+            </div>
+            <div class="weather">
+                <img class="weatherIcon" v-bind:src="'https://a.hecdn.net/img/common/icon/202106d/'+now.icon+'.png'">
+                <div>
+                    {{ now.feelsLike + '°C' }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js">
+
+    </script>
+    <script>
+        const {
+            createApp
+        } = Vue
+
+        createApp({
+            data() {
+                return {
+                    time: 0,
+                    minutesPersent: 0,
+                    where: '110.13,22.61',
+                    now: {},
+                }
+            },
+            created() {
+                this.timeThing()
+                this.weather()
+            },
+            methods: {
+                timeThing() {
+                    this.time = new Date()
+
+                    setTimeout(() => {
+                        this.timeThing()
+                    }, 100);
+                },
+
+                form1(t) {
+
+
+                    date = new Date();
+                    var now = date.getTime();
+
+                    Year = date.getFullYear();
+                    Month = date.getMonth() + 1;
+                    theDate = date.getDate();
+                    var h = date.getHours()
+                    var m = date.getMinutes()
+                    var s = date.getSeconds()
+                    var mm = date.get
+
+                    if (h < 10) {
+                        h = '0' + h
+                    }
+                    if (m < 10) {
+                        m = '0' + m
+                    }
+
+
+                    this.minutesPersent = (s * 1000 + date.getTime() - Date.parse(date)) / (60 * 1000)
+                    return h + ":" + m
+
+                    setTimeout(() => {
+                        auto()
+                    }, 100);
+                },
+                weather() {
+                    var content = "?key=6481d49774104e088a6a5a73399162d5&location=" + this.where
+
+                    fetch('https://devapi.qweather.com/v7/grid-weather/now?' + content).then(r => r.json()).then(r => {
+                        this.now = r.now
+                    })
+                }
+            }
+        }).mount('body')
+    </script>
+</body>
+
+</html>

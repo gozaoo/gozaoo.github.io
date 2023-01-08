@@ -54,7 +54,7 @@
 
         .ti-MinuPersent {
             height: 0.05em;
-            transition: width 1.2s linear;
+            /* transition: width 1.2s linear; */
             width: calc(100% * var(--persent));
             background: #ffffff99;
             border-radius: 0.05em;
@@ -68,11 +68,13 @@
             border-radius: 0.05em;
             width: 100%;
         }
-        .weather{
+
+        .weather {
             display: flex;
             align-items: center;
         }
-        .weatherIcon{
+
+        .weatherIcon {
             height: 2em;
             aspect-ratio: 1/1;
         }
@@ -82,10 +84,11 @@
 <body>
     <div class="backgroundImage">
         <div class="buttomLabs">
-            <div class="time">
+            <div class="time" @click="launchFullscreen()">
                 <div>{{ form1(time) }}</div>
                 <div class="ti-MinuPersentBox">
-                    <div v-bind:style="'--persent:'+ minutesPersent" class="ti-MinuPersent"></div>
+                    <div v-bind:style="'--persent:'+ ((new Date().getTime() -  Date.parse(new Date())) / 1000 + new Date().getSeconds()) / 60 "
+                        class="ti-MinuPersent"></div>
                 </div>
 
             </div>
@@ -159,13 +162,30 @@
                 weather() {
                     var content = "?key=6481d49774104e088a6a5a73399162d5&location=" + this.where
 
-                    fetch('https://devapi.qweather.com/v7/weather/now' + content).then(r => r.json()).then(r => {
-                        this.now = r.now
-                    })
-
+                    fetch('https://devapi.qweather.com/v7/weather/now' + content).then(r => r.json()).then(
+                        r => {
+                            this.now = r.now
+                        })
+                    fetch('https://devapi.qweather.com/v7/weather/3d' + content)
+                        .then(r => r.json())
+                        .then(r => {
+                            this.threeDayWeatherCache = r.daily
+                        })
                     setTimeout(() => {
                         this.weather()
-                    }, 20*60*1000);
+                    }, 20 * 60 * 1000);
+                },
+                launchFullscreen() {
+                    let element = document.body
+                    if (element.requestFullscreen) {
+                        element.requestFullscreen();
+                    } else if (element.mozRequestFullScreen) {
+                        element.mozRequestFullScreen();
+                    } else if (element.msRequestFullscreen) {
+                        element.msRequestFullscreen();
+                    } else if (element.webkitRequestFullscreen) {
+                        element.webkitRequestFullScreen();
+                    }
                 }
             }
         }).mount('body')

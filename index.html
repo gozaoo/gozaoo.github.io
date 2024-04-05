@@ -8,8 +8,13 @@
 	<style>
 		@font-face {
 			font-family: font;
-			src: url(./pingbao/ass/HarmonyOS_Sans_SC_Regular.ttf);
+			src: url(./ass/MiSans-Regular.ttf);
 		}
+		@font-face {
+			font-family:deyihei;
+			src: url(./ass/SmileySans-Oblique.ttf);
+		}
+
 
 		* {
 			font-family: font;
@@ -107,7 +112,7 @@
 			border-radius: 7px;
 		}
 
-		.card .bold.title { 
+		.card .bold.title {
 			position: relative;
 			width: fit-content;
 			font-size: 18px;
@@ -117,9 +122,10 @@
 		.bold {
 			font-weight: bold;
 		}
-		#copybox{
+
+		#copybox {
 			cursor: pointer;
-			
+
 		}
 	</style>
 </head>
@@ -128,6 +134,7 @@
 	<div>
 		<h1 class="mainTitle">你好！</h1>
 		<h2>我是 gozaoo</h2>
+		<h1 style="font-family: deyihei;font-size:1em; letter-spacing: 0.05em; ">「No matter how hard it is to achieve your goals, you can make it. And after you have reached the desired success in your life, no one will stop you from talking. The way to get started is to quit talking and begin doing.」- Walt Disney</h1>
 
 		<div class="tagsRow">
 			<div>
@@ -149,7 +156,7 @@
 				nodejs
 			</div>
 			<div>
-				rust
+				RUST
 			</div>
 			<div>
 				爱听音乐
@@ -158,10 +165,7 @@
 				C++
 			</div>
 			<div>
-				RUST
-			</div>
-			<div>
-				
+				INTJ
 			</div>
 		</div>
 		<!-- <h2>一丢丢小记录</h2>
@@ -180,7 +184,7 @@
 				</div>
 			</div>
 			<div onclick="window.open('https://github.com/gozaoo/EffiNote')" class="card">
-				<div  class="iconRow bold noPadding">
+				<div class="iconRow bold noPadding">
 					<span style="position: absolute;font-size: 16px;
 					left: 5px;top: 28px;">NOTE</span>
 				</div>
@@ -189,13 +193,13 @@
 					<div>实时渲染markdown编辑器</div>
 				</div>
 			</div>
-			
+
 			<div onclick="window.open('https://github.com/gozaoo/BlurLyric')" class="card">
 				<div class="iconRow noPadding">
 					<img src="./ass/127.0.0.1_5500_blurLyricIco.html.png" alt="" srcset="">
 				</div>
 				<div>
-					<div class="bold title">BlurLyric</div>
+					<div class="bold title">BlurLyric <span>全新3.0更新中</span></div>
 					<div>高颜值，性能良好的音乐播放器</div>
 				</div>
 			</div>
@@ -221,7 +225,7 @@
 					<div>极简的美观起始页</div>
 				</div>
 			</div>
-			
+
 		</div>
 		<h2>联系方式</h2>
 		<div id="copybox">
@@ -236,7 +240,8 @@
 			邮箱 <span>gozaoo@outlook.com</span>
 		</div>
 		<h2>友情链接</h2>
-		<div><img onclick="window.open('https://github.com/Project-And-Factory/')" src="./ass/PAF-MAIN-LOGO.svg" alt="" srcset=""></div>
+		<div><img onclick="window.open('https://github.com/Project-And-Factory/')" src="./ass/PAF-MAIN-LOGO.svg" alt=""
+				srcset=""></div>
 	</div>
 	<script>
 		let copyboxs = document.querySelectorAll('#copybox')
@@ -245,7 +250,8 @@
 				const element = copyboxs[key];
 				element.addEventListener('click', (event) => {
 					copyText(selectText(element.querySelector('span')))
-					element.querySelector('svg').innerHTML = '<path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>'
+					element.querySelector('svg').innerHTML =
+						'<path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>'
 				})
 			}
 		}

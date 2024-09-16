@@ -1,7 +1,7 @@
 :root {
   font-family: misans;
   line-height: 1.5;
-  font-weight: 400;
+  /* font-weight: 400; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

@@ -14,7 +14,7 @@ createApp(App)
 .use(
     
     router.routerCreater(
-        (isProduction)?'/blogs/output/':'/',
+        (isProduction)?'/vueRender/output/':'/',
         routes.map((value)=>{
             return {
                 path: value.path,

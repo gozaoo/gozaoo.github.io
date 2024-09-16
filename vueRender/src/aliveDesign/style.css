@@ -1,4 +1,4 @@
-:root{
+:root {
     --al-backgournd-color: #f6f6f6;
     --al-card-row-border-radius: 30px;
     --al-card-background-color: #ffffff;
@@ -6,6 +6,7 @@
     --al-card-row-padding: 39px;
     --al-active-color: #207ffc;
 }
+
 body {
     background-color: #f7f8fa;
     overflow-x: auto;
@@ -13,18 +14,20 @@ body {
     font-weight: 400;
     line-height: 1.55;
 }
-.al-card-row{
-      display: flex;
-    gap: var(--al-card-row-gap)
 
+.al-card-row {
+    display: flex;
+    gap: var(--al-card-row-gap)
 }
-.al-card{
+
+.al-card {
     background-color: var(--al-card-background-color);
     border-radius: var(--al-card-row-border-radius);
     padding: var(--al-card-row-padding);
     box-sizing: border-box;
 }
-.al-router{
+
+.al-router {
     background-color: var(--al-card-background-color);
     padding: 13px;
     border-radius: 15px;
@@ -35,7 +38,8 @@ body {
     gap: 13px;
     box-sizing: border-box;
 }
-.al-router-inner{
+
+.al-router-inner {
     background-color: var(--al-backgournd-color);
     font-weight: 600;
     font-size: 15px;
@@ -45,13 +49,15 @@ body {
     border-radius: 13px;
     user-select: none;
 }
-.al-router-inner-end{
+
+.al-router-inner-end {
     font-size: 9px;
     color: hsla(0, 0%, 0%, 0.3);
     line-height: 10px;
     font-weight: 400;
 }
-.al-router-inner-tags{
+
+.al-router-inner-tags {
     font-size: 11px;
     color: #fff;
     display: inline-block;
@@ -62,7 +68,7 @@ body {
     /* font-weight: 400; */
 }
 
-pre{
+pre {
     background-color: var(--al-card-background-color);
     border-radius: 13px;
     padding: 12px 15px;

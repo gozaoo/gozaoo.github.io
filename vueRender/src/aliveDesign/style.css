@@ -1,0 +1,71 @@
+:root{
+    --al-backgournd-color: #f6f6f6;
+    --al-card-row-border-radius: 30px;
+    --al-card-background-color: #ffffff;
+    --al-card-row-gap: 24px;
+    --al-card-row-padding: 39px;
+    --al-active-color: #207ffc;
+}
+body {
+    background-color: #f7f8fa;
+    overflow-x: auto;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.55;
+}
+.al-card-row{
+      display: flex;
+    gap: var(--al-card-row-gap)
+
+}
+.al-card{
+    background-color: var(--al-card-background-color);
+    border-radius: var(--al-card-row-border-radius);
+    padding: var(--al-card-row-padding);
+    box-sizing: border-box;
+}
+.al-router{
+    background-color: var(--al-card-background-color);
+    padding: 13px;
+    border-radius: 15px;
+    width: 200px;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    gap: 13px;
+    box-sizing: border-box;
+}
+.al-router-inner{
+    background-color: var(--al-backgournd-color);
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 24px;
+    padding: 8px;
+    padding-top: 12px;
+    border-radius: 13px;
+    user-select: none;
+}
+.al-router-inner-end{
+    font-size: 9px;
+    color: hsla(0, 0%, 0%, 0.3);
+    line-height: 10px;
+    font-weight: 400;
+}
+.al-router-inner-tags{
+    font-size: 11px;
+    color: #fff;
+    display: inline-block;
+    background-color: var(--al-active-color);
+    padding: 5px 6px;
+    border-radius: 11px;
+    line-height: 14px;
+    /* font-weight: 400; */
+}
+
+pre{
+    background-color: var(--al-card-background-color);
+    border-radius: 13px;
+    padding: 12px 15px;
+    font-size: 13px;
+    box-sizing: border-box;
+}

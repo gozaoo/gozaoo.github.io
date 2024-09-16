@@ -10,7 +10,7 @@
 }
 @font-face {
   font-family: misans;
-  src: url(../../ass/MiSans-Regular.ttf);
+  src: url(./assets/MiSans-Regular.ttf);
 }
 body{
   padding: 0;

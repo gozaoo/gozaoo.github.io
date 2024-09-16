@@ -4,6 +4,7 @@ import vue from '@vitejs/plugin-vue'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  base: '/vueRender/output',
   build: {
     rollupOptions: {
       input: './index.html', // 指定入口文件

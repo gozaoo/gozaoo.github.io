@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 5vh 10vw;
+            user-select: none;
+        }
+
+        .box {
+            background-color: #444;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: calc(50% - 25px);
+            top: calc(50% - 25px);
+            /* outline: auto; */
+            outline: 5px soild #0002;
+        }
+    </style>
+</head>
+
+<div>
+    <div class="a" style="
+            height: 150px;
+        position: relative;
+    ">
+        <div class="box"></div>
+
+    </div>
+    <div>
+        <button onclick="launchAnimation()">test</button>
+        state: &nbsp;<span></span>
+    </div>
+</div>
+
+<body>
+    <script>
+function createCalculator({
+    v0,
+    m,
+    k,
+    x0 = 1,
+    mu
+}) {
+    // 计算阻尼系数gamma和角频率omega
+    const omega0 = Math.sqrt(k / m);
+    const zeta = mu / (2 * Math.sqrt(m * k));
+    const omegaD = omega0 * Math.sqrt(1 - zeta * zeta);
+
+    // 计算振幅A和相位角phi
+    const A = Math.sqrt(x0 * x0 + (v0 + zeta * omega0 * x0) * (v0 + zeta * omega0 * x0) / omegaD / omegaD);
+    const phi = Math.atan2(omegaD * x0, v0 + zeta * omega0 * x0);
+
+    // 返回calculator函数
+    return {
+        calculator(t) {
+            // 计算位移displacement和速度velocity
+            const displacement = A * Math.exp(-zeta * omega0 * t) * Math.cos(omegaD * t + phi);
+            const velocity = -A * zeta * omega0 * Math.exp(-zeta * omega0 * t) * Math.cos(omegaD * t + phi) - A * omegaD * Math.exp(-zeta * omega0 * t) * Math.sin(omegaD * t + phi);
+
+            return {
+                displacement,
+                velocity
+            };
+        },
+        calculateStopTime(E_threshold = 1e-2) {
+            // 计算振动停止时间
+            // 添加检查以确保E0不为零
+            const E0 = 0.5 * m * v0 * v0 + 0.5 * k * x0 * x0; // 初始总能量
+            if (E0 === 0) {
+                return Infinity; // 如果初始能量为零，则振动从未开始
+            }
+
+            let t = 0;
+            let E = E0;
+            while (E > E_threshold) {
+                const { displacement, velocity } = this.calculator(t);
+                E = 0.5 * m * velocity * velocity + 0.5 * k * displacement * displacement;
+                t += 0.01; // 时间步进
+            }
+            return t;
+        }
+
+    };
+}
+
+
+
+
+        // 启动动画的函数
+        function launchAnimation() {
+            let boxElement = document.querySelector('.box');
+            let logElement = document.querySelector('span');
+            let onmove = (info) => {
+                boxElement.style.transform = `translate(${info.offsetX}px,${info.offsetY}px)`;
+                result.stop()
+            }
+            let result = createAnimationElement({
+                element: boxElement
+            })
+            createdrag(boxElement, onmove, onmove, (info) => {
+                result.setPosition(info.offsetX, info.offsetY)
+                result.setSpeed(info.speedX, info.speedY)
+                result.to(0, 0)
+                setTimeout(() => {
+                    result.to(100, 100)                    
+                }, 1000);
+            })
+        }
+
+        function createAnimationElement({
+            element,
+            condition = {
+                x: {
+                    m: 2.5,
+                    mu: 15,
+                    k: 80
+                },
+                y: {
+                    m: 2.5,
+                    mu: 15,
+                    k: 80
+                }
+            } // 默认条件
+            // 默认条件
+        }) {
+            let state = {
+                x: {
+                    position: 0,
+                    velocity: 0
+                },
+                y: {
+                    position: 0,
+                    velocity: 0
+                }
+            };
+            let isAnimating = false
+            let calculatorResults = {
+                x: null,
+                y: null
+            };
+
+            let startTime, endTime;
+
+            function animationSlover() {
+
+                const currentTime = Date.now();
+                const elapsedTime = (currentTime - startTime) / 1000;
+
+                if (elapsedTime <= endTime.x && elapsedTime <= endTime.y && isAnimating == true) {
+                    const detailsX = calculatorResults.x.calculator(elapsedTime);
+                    const detailsY = calculatorResults.y.calculator(elapsedTime);
+
+                    state.x.position = detailsX.displacement * 100;
+                    state.y.position = detailsY.displacement * 100;
+                    state.x.velocity = detailsX.velocity * 100;
+                    state.y.velocity = detailsY.velocity * 100;
+
+                    element.style.transform = `translate(${state.x.position}px,${state.y.position}px)`;
+
+                    requestAnimationFrame(animationSlover);
+                } else {
+                    // 动画结束，保存最终速度
+                    state.x.velocity = calculatorResults.x.calculator(endTime.x).velocity * 100;
+                    state.y.velocity = calculatorResults.y.calculator(endTime.y).velocity * 100;
+                }
+            }
+            let setSpeed = (xSpeed, ySpeed) => {
+                state.x.velocity = xSpeed;
+                state.y.velocity = ySpeed;
+
+                // 根据新的速度重新计算动画
+                if (calculatorResults.x && calculatorResults.y) {
+                    to(element.offsetLeft + xSpeed, element.offsetTop + ySpeed);
+                }
+            }
+
+            let to = (x, y) => {
+
+                isAnimating = true
+
+                const targetDisplacementX = (x + state.x.position) / 100;
+                const targetDisplacementY = (y + state.y.position) / 100;
+                console.log({
+                    x: {
+                        v0: state.x.velocity,
+                        x0: targetDisplacementX,
+                        ...condition.x
+                    },
+                    y: {
+                        v0: state.y.velocity,
+                        x0: targetDisplacementY,
+                        ...condition.y
+                    }
+                });
+
+                calculatorResults.x = createCalculator({
+                    v0: state.x.velocity,
+                    x0: targetDisplacementX,
+                    ...condition.x
+                });
+                console.log(calculatorResults.x.calculator(0),                    
+                targetDisplacementX,state.x.velocity,);
+
+                calculatorResults.y = createCalculator({
+                    v0: state.y.velocity,
+                    x0: targetDisplacementY,
+                    ...condition.y
+                });
+
+                const endTimeX = calculatorResults.x.calculateStopTime();
+                const endTimeY = calculatorResults.y.calculateStopTime();
+                endTime = {
+                    x: endTimeX,
+                    y: endTimeY
+                };
+
+                startTime = Date.now();
+                requestAnimationFrame(animationSlover);
+            }
+
+            let editCondition = (newCondition) => {
+                condition.x = {
+                    ...condition.x,
+                    ...newCondition.x
+                };
+                condition.y = {
+                    ...condition.y,
+                    ...newCondition.y
+                };
+
+                // 如果动画正在运行，需要重新计算动画
+                if (calculatorResults.x && calculatorResults.y) {
+                    to(element.offsetLeft, element.offsetTop);
+                }
+            }
+            let setPosition = (xPos, yPos) => {
+                state.x.position = xPos;
+                state.y.position = yPos;
+
+                // 更新元素的位置
+                element.style.transform = `translate(${xPos}px,${yPos}px)`;
+            }
+            let stop = () => {
+                isAnimating = false
+            }
+            return {
+                to,
+                editCondition,
+                setSpeed,
+                setPosition,
+                stop
+            };
+        }
+
+
+
+        function createdrag(element, onClickCallBack, onMoveCallBack, moveEndCallBack) {
+            let info = {
+                screenX: null,
+                screenY: null,
+                originScreenX: null,
+                originScreenY: null,
+
+                offsetX: null,
+                offsetY: null,
+
+                speedX: 0,
+                speedY: 0,
+
+                speedDirectionX: 'none',
+                speedDirectionY: 'none',
+                offsetDirectionX: 'none',
+                offsetDirectionY: 'none',
+
+                lastScreenX: null,
+                lastScreenY: null,
+                lastTime: null
+
+            };
+
+            let addListen = () => {
+                element.addEventListener('mousedown', onMouseDown);
+                element.addEventListener('touchstart', onTouchStart);
+            };
+
+            let destroy = () => {
+                element.removeEventListener('mousedown', onMouseDown);
+                element.removeEventListener('touchstart', onTouchStart);
+                document.removeEventListener('mousemove', onMouseMove);
+                document.removeEventListener('mouseup', onMouseUp);
+                document.removeEventListener('touchmove', onTouchMove);
+                document.removeEventListener('touchend', onTouchEnd);
+                document.removeEventListener('touchcancel', onTouchEnd);
+            };
+
+            let onMove = (event) => {
+                event.preventDefault()
+                // 更新info对象的值
+                // 例如：info.screenX = event.screenX;
+                // 你需要根据实际情况更新这些值
+                onMoveCallBack(info);
+            };
+
+            let onDragEnd = () => {
+                // 在这里处理拖拽结束的逻辑
+                moveEndCallBack(info);
+                info = {
+                    screenX: null,
+                    screenY: null,
+                    originScreenX: null,
+                    originScreenY: null,
+
+                    offsetX: null,
+                    offsetY: null,
+
+                    speedX: 0,
+                    speedY: 0,
+
+                    speedDirectionX: 'none',
+                    speedDirectionY: 'none',
+                    offsetDirectionX: 'none',
+                    offsetDirectionY: 'none',
+
+                    lastScreenX: null,
+                    lastScreenY: null,
+                    lastTime: null
+
+                };
+                // 移除mousemove和mouseup事件监听器
+                document.removeEventListener('mousemove', onMouseMove);
+                document.removeEventListener('mouseup', onMouseUp);
+            };
+
+            // 鼠标事件处理函数
+            let onMouseDown = (event) => {
+                // 记录初始位置
+                info.originScreenX = event.screenX;
+                info.originScreenY = event.screenY;
+                info.screenX = event.screenX;
+                info.screenY = event.screenY;
+
+                // 添加mousemove和mouseup事件监听器到document
+                onClickCallBack(info)
+                document.addEventListener('mousemove', onMouseMove);
+                document.addEventListener('mouseup', onMouseUp);
+            };
+
+            let onMouseMove = (event) => {
+                event.preventDefault()
+
+                if (event.buttons != 1) {
+                    onMouseUp()
+                    return
+                }
+
+                updateSpeedAndDirection(event.screenX, event.screenY, event.timeStamp);
+                // 计算移动距离
+                info.offsetX = event.screenX - info.originScreenX;
+                info.offsetY = event.screenY - info.originScreenY;
+                info.screenX = event.screenX;
+                info.screenY = event.screenY;
+                // 更新方向和速度
+                // 你需要根据实际情况更新这些值
+
+                onMove(event);
+            };
+
+            let onMouseUp = (event) => {
+                onDragEnd();
+            };
+
+            // 触摸事件处理函数
+            let onTouchStart = (event) => {
+                // 记录初始位置
+                let touch = event.touches[0] || event.changedTouches[0];
+                info.originScreenX = touch.screenX;
+                info.originScreenY = touch.screenY;
+                event.preventDefault()
+                info.screenX = touch.screenX;
+                info.screenY = touch.screenY;
+                // 添加touchmove和touchend事件监听器到element
+                onClickCallBack(info)
+                document.addEventListener('touchmove', onTouchMove);
+                document.addEventListener('touchend', onTouchEnd);
+                document.addEventListener('touchcancel', onTouchEnd);
+            };
+
+            let onTouchMove = (event) => {
+                event.preventDefault()
+
+                let touch = event.touches[0] || event.changedTouches[0];
+                updateSpeedAndDirection(touch.screenX, touch.screenY, event.timeStamp);
+
+                // 计算移动距离
+                info.offsetX = touch.screenX - info.originScreenX;
+                info.offsetY = touch.screenY - info.originScreenY;
+                info.screenX = touch.screenX;
+                info.screenY = touch.screenY;
+                // 更新方向和速度
+                // 你需要根据实际情况更新这些值
+
+                onMove(event);
+            };
+
+            let onTouchEnd = (event) => {
+                // 移除touchmove和touchend事件监听器
+                document.removeEventListener('touchmove', onTouchMove);
+                event.preventDefault()
+                document.removeEventListener('touchend', onTouchEnd);
+                document.removeEventListener('touchcancel', onTouchEnd);
+
+                onDragEnd();
+            };
+
+            // 更新速度和方向的辅助函数
+            let updateSpeedAndDirection = (currentX, currentY, currentTime) => {
+                if (info.lastTime && info.lastScreenX !== null && info.lastScreenY !== null) {
+                    let deltaTime = currentTime - info.lastTime;
+                    let deltaX = currentX - info.lastScreenX;
+                    let deltaY = currentY - info.lastScreenY;
+                    let speedX = deltaX / deltaTime || 0;
+                    let speedY = deltaY / deltaTime || 0;
+
+                    info.speedX = speedX;
+                    info.speedY = speedY;
+
+                    info.speedDirectionX = deltaX > 0 ? 'right' : deltaX < 0 ? 'left' : 'none';
+                    info.speedDirectionY = deltaY > 0 ? 'down' : deltaY < 0 ? 'up' : 'none';
+
+                    info.offsetDirectionX = deltaX > 0 ? 'right' : deltaX < 0 ? 'left' : 'none';
+                    info.offsetDirectionY = deltaY > 0 ? 'up' : deltaY < 0 ? 'down' : 'none';
+                }
+
+                info.lastScreenX = currentX;
+                info.lastScreenY = currentY;
+                info.lastTime = currentTime;
+            };
+
+            addListen(); // 初始化监听器
+            return {
+                destroy
+            };
+        }
+        launchAnimation()
+    </script>
+</body>
+
+</html>
